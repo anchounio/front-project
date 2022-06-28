@@ -145,11 +145,6 @@ const ExerciseSearch = () => {
   return (
     <main className='ExerciseSearch'>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          name='keyword'
-          onChange={(e) => setKeyword(e.target.value)}
-        />
         <select name='typology' onChange={(e) => setTypology(e.target.value)}>
           <option value='' defaultValue></option>
           <option value='aerobico'>aerobico</option>
