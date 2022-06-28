@@ -154,11 +154,11 @@ const ExerciseSearch = () => {
         </select>
 
         <select name='muscular' onChange={(e) => setMuscular(e.target.value)}>
-          <option value='value' defaultValue></option>
-          <option value='Brazos'>Brazos</option>
-          <option value='Piernas'>Piernas</option>
-          <option value='Espalda'>Espalda</option>
-          <option value='Pecho'>Pecho</option>
+          <option value='' defaultValue></option>
+          <option value='brazos'>Brazos</option>
+          <option value='piernas'>Piernas</option>
+          <option value='espalda'>Espalda</option>
+          <option value='pecho'>Pecho</option>
         </select>
 
         {/* <label for='cars'>Choose a car:</label>
