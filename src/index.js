@@ -4,18 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { RoleProvider } from './RoleContext';
 import { BrowserRouter } from 'react-router-dom';
 import { TokenProvider } from './TokenContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <TokenProvider>
-        <BrowserRouter>
-            <React.StrictMode>
-                <App />
-            </React.StrictMode>
-        </BrowserRouter>
-    </TokenProvider>
+  <TokenProvider>
+    <RoleProvider>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </RoleProvider>
+  </TokenProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
