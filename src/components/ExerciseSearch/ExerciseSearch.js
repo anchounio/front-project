@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useToken } from '../../TokenContext';
 import { Link } from 'react-router-dom';
+import { useRole } from '../../RoleContext';
+
 import './ExerciseSearch.css';
 
 const ExerciseSearch = () => {
   const [token] = useToken();
-
+  const [userRole, setUserRole] = useRole();
   const [typology, setTypology] = useState('');
   const [muscular, setMuscular] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,6 +20,8 @@ const ExerciseSearch = () => {
 
     // Vaciamos el error.
     setError(null);
+    console.log(userRole);
+    console.log(token);
 
     // Si hay token nos interesa mandarlo para comprobar los exercises de los que somos dueños.
     const params = token

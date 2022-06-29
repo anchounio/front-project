@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
+import { useRole } from '../../RoleContext';
 
 import './Login.css';
 
 const Login = () => {
   const [token, setToken] = useToken();
-
+  const [userRole, setUserRole] = useRole();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,7 @@ const Login = () => {
 
     setError(null);
     setLoading(true);
+    console.log(userRole);
 
     try {
       const res = await fetch('http://localhost:4000/login', {
@@ -34,11 +36,12 @@ const Login = () => {
       });
 
       const body = await res.json();
-
+      console.log(body);
       if (body.status === 'error') {
         setError(body.message);
       } else {
         setToken(body.data.token);
+        setUserRole(body.data.role);
       }
     } catch (err) {
       console.error(err);
