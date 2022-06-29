@@ -27,12 +27,7 @@ const ExerciseDetail = () => {
       : {};
 
     try {
-      const res = await fetch(`http://localhost:4000/exercises/${id}`, {
-        method: 'GET',
-        headers: {
-          Authorization: token,
-        },
-      });
+      const res = await fetch(`http://localhost:4000/exercises/${id}`, params);
 
       const body = await res.json();
 
@@ -43,10 +38,7 @@ const ExerciseDetail = () => {
         setError(body.message);
         console.log(error);
       } else {
-        setUpdate(!update);
-        console.log(body.data.exercise);
         setExercise(body.data.exercise);
-        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -61,10 +53,6 @@ const ExerciseDetail = () => {
     showExercise();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
-  // console.log(exercise.name);
-  // showExercise();
-
-  console.log(exercise);
 
   const handleLike = async (e) => {
     setLoading(true);
@@ -105,7 +93,7 @@ const ExerciseDetail = () => {
     setLoading(true);
     setError(null);
 
-    if (window.confirm('¿Deseas eliminar el tweet?')) {
+    if (window.confirm('¿Deseas eliminar el ejercicio?')) {
       const li = e.target.closest('li');
 
       const idExercise = li.getAttribute('data-id');
@@ -136,14 +124,13 @@ const ExerciseDetail = () => {
     }
   };
 
+  console.log('hola');
+
   return (
     <main className='ExerciseDetail'>
-      {/* {error && <p className='Error'>{error}</p>} */}
       <ul className='ExerciseList'>
-        {/* return ( */}
         <li key={exercise.id} data-id={exercise.id}>
           <div>
-            {/* <p>Id: {exercise.id}</p> */}
             <p>Nombre: {exercise.name}</p>
             <p>Descripción: {exercise.description}</p>
             <p>Tipología: {exercise.typology}</p>
@@ -172,7 +159,6 @@ const ExerciseDetail = () => {
             {token && <Link to={`/update/${exercise.id}`}>Actualizar</Link>}
           </footer>
         </li>
-        {/* ); */}
       </ul>
     </main>
   );
