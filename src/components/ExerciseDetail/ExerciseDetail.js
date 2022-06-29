@@ -17,6 +17,11 @@ const ExerciseDetail = () => {
     // Vaciamos el error.
     setError(null);
 
+    console.log('init likes');
+    console.log(exercise.likes);
+    console.log('init favourites');
+    console.log(exercise.favourites);
+
     // Si hay token nos interesa mandarlo para comprobar los exercises de los que somos dueños.
     const params = token
       ? {
@@ -81,6 +86,45 @@ const ExerciseDetail = () => {
         setError(body.message);
       } else {
         setUpdate(!update);
+        console.log('likes');
+        console.log(exercise.likes);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFavourite = async (e) => {
+    setLoading(true);
+    setError(null);
+
+    // e.target.classList.toggle('IsAnimating');
+
+    const li = e.target.closest('li');
+
+    const idExercise = li.getAttribute('data-id');
+
+    try {
+      const res = await fetch(
+        `http://localhost:4000/exercises/${idExercise}/favourite`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+
+      const body = await res.json();
+
+      if (body.status === 'error') {
+        setError(body.message);
+      } else {
+        setUpdate(!update);
+        console.log('favoritos');
+        console.log(exercise.favourites);
       }
     } catch (err) {
       setError(err.message);
@@ -142,6 +186,7 @@ const ExerciseDetail = () => {
               />
             )}
             <p>Likes: {exercise.likes}</p>
+            <p>Favorito: {exercise.favourites}</p>
           </div>
           <footer>
             <div>
@@ -152,6 +197,9 @@ const ExerciseDetail = () => {
                 onClick={token && handleLike}
               ></div>
               <p>{exercise.likes} likes</p>
+            </div>
+            <div className='favourites'>
+              <button onClick={token && handleFavourite}>Favorito</button>
             </div>
             {token && exercise.owner === 1 && (
               <button onClick={handleDeleteExercise}>Eliminar</button>
