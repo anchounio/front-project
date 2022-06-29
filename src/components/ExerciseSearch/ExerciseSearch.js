@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useToken } from '../../TokenContext';
+import { Link } from 'react-router-dom';
 import './ExerciseSearch.css';
 
 const ExerciseSearch = () => {
@@ -206,6 +207,9 @@ const ExerciseSearch = () => {
                   </div>
                   {token && exercise.owner === 1 && (
                     <button onClick={handleDeleteExercise}>Eliminar</button>
+                  )}
+                  {token && (
+                    <Link to={`/details/${exercise.id}`}>Detalles</Link>
                   )}
                 </footer>
               </li>
