@@ -35,12 +35,7 @@ const ExerciseSearch = () => {
     try {
       const res = await fetch(
         `http://localhost:4000/exercises?typology=${typology}&muscular=${muscular}`,
-        {
-          method: 'GET',
-          headers: {
-            Authorization: token,
-          },
-        }
+        params
       );
 
       const body = await res.json();
@@ -108,7 +103,7 @@ const ExerciseSearch = () => {
     setLoading(true);
     setError(null);
 
-    if (window.confirm('¿Deseas eliminar el tweet?')) {
+    if (window.confirm('¿Deseas eliminar el ejercicio?')) {
       const li = e.target.closest('li');
 
       const idExercise = li.getAttribute('data-id');
