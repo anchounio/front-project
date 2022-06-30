@@ -1,32 +1,13 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
+import { useUser } from '../../UserContext';
 
 import './Header.css';
 
 const Header = () => {
+
+  const [user] = useUser();
   const [token, setToken] = useToken();
-  const [username, setUsername] = useState();
-
-  const userData = async () => {
-    try {
-      const res = await fetch('http://localhost:4000/users', {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      const body = await res.json();
-
-      if (body.status === 'ok') {
-        setUsername(body.data.user.username);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  if (token) userData();
 
   return (
     <header>
@@ -38,7 +19,7 @@ const Header = () => {
       </div>
 
       <div className='Buttons'>
-        {token && <p>@{username}</p>}
+        {token && <p>{name}</p>}
         {!token && (
           <div className='Button'>
             <NavLink to='/login'>Iniciar sesión</NavLink>
