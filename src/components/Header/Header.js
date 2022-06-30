@@ -10,9 +10,10 @@ const Header = () => {
 
   return (
     <header>
-      <h1>
-        <NavLink to='/'>Mini Twitter</NavLink>
-      </h1>
+      <h1 id='Cabecera'>Gimnasio Los Chapuceros</h1>
+      <NavLink to='/'>
+        <img src='/logo.jpg' alt='logo' id='Logo' />
+      </NavLink>
       <div className='Buttons'>
         {token && <p>{user}</p>}
         {!token && (
