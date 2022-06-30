@@ -116,11 +116,24 @@ const ExerciseUpdate = () => {
       <form onSubmit={handleSubmit}>
         <input
           type='file'
-          defaultValue={exercise.photo}
+          // defaultValue={exercise.photo}
           onChange={(e) => {
             setSelectedFile(e.target.files[0]);
           }}
         />
+
+        {/* {selectedFile ? (
+          <img
+            src={`http://localhost:4000/${selectedFile}`}
+            alt='Imagen adjunta'
+          />
+        ) : (
+          <img
+            src={`http://localhost:4000/${exercise.photo}`}
+            alt='Imagen adjunta'
+          />
+        )} */}
+
         <input
           type='text'
           defaultValue={exercise.name}
