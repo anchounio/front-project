@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './ExerciseDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
+import { useRole } from '../../RoleContext';
 
 const ExerciseDetail = () => {
   const [token] = useToken();
@@ -10,10 +11,12 @@ const ExerciseDetail = () => {
   const [, setLoading] = useState(false);
   const [update, setUpdate] = useState(false);
   const { id } = useParams();
+  const [userRole] = useRole();
 
   const showExercise = async () => {
     setLoading(true);
 
+    console.log(userRole);
     // Vaciamos el error.
     setError(null);
 
@@ -201,10 +204,12 @@ const ExerciseDetail = () => {
             <div className='favourites'>
               <button onClick={token && handleFavourite}>Favorito</button>
             </div>
-            {token && exercise.owner === 1 && (
+            {token && userRole === 'admin' && (
               <button onClick={handleDeleteExercise}>Eliminar</button>
             )}
-            {token && <Link to={`/update/${exercise.id}`}>Actualizar</Link>}
+            {token && userRole === 'admin' && (
+              <Link to={`/update/${exercise.id}`}>Actualizar</Link>
+            )}
           </footer>
         </li>
       </ul>

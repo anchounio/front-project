@@ -1,4 +1,3 @@
-import Select from 'react-select';
 import { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
@@ -19,28 +18,6 @@ const ExerciseUpdate = () => {
   const { id } = useParams();
 
   console.log('la typology es:' + exercise.typology);
-  // En este primer fetch, sacamos los datos antiguos del ejercicios
-  // a modificar. La idea es extraerlos para que se muestren como valores
-  // por defecto modificables en el formulario.
-
-  // const typOptions = [
-  //   { value: '', label: '' },
-  //   { value: 'aerobico', label: 'aerobico' },
-  //   { value: 'anaerobico', label: 'anaerobico' },
-  //   { value: 'flexibilidad', label: 'flexibilidad' },
-  //   { value: 'resistencia', label: 'resistencia' },
-  // ];
-
-  // let typValue = {};
-  // for (let i = 0; i < typOptions.length; i++) {
-  //   console.log(typOptions[i]);
-  //   if (typOptions[i].value === exercise.typology) {
-  //     typValue = typOptions[i];
-  //     console.log('se ha hecho!!!');
-  //   }
-  // }
-  // console.log('soy atractivo');
-  // console.log(typValue);
 
   const showExercise = async () => {
     setLoading(true);
@@ -142,17 +119,7 @@ const ExerciseUpdate = () => {
             setSelectedFile(e.target.files[0]);
           }}
         />
-        {/* {selectedFile ? (
-          <img
-            src={`http://localhost:4000/${selectedFile}`}
-            alt='Imagen adjunta'
-          />
-        ) : (
-          <img
-            src={`http://localhost:4000/${exercise.photo}`}
-            alt='Imagen adjunta'
-          />
-        )} */}
+
         <input
           type='text'
           required
@@ -161,21 +128,6 @@ const ExerciseUpdate = () => {
             setName(e.target.value);
           }}
         />
-        {/* <Select
-          // value={typology}
-          options={typOptions}
-          defaultValue={typValue}
-          onChange={(e) => setTypology(e.value)}
-        >
-          {/* // defaultValue={exercise.typology}
-          // name='typology' // required // onChange=
-          {(e) => setTypology(e.target.value)}
-          // > // <option value=''></option>
-          // <option value='aerobico'>aerobico</option>
-          // <option value='anaerobico'>anaerobico</option>
-          // <option value='flexibilidad'>flexibilidad</option>
-          // <option value='resistencia'>resistencia</option> */}
-        {/* </Select> */}
 
         {exercise.typology === 'aerobico' && (
           <select
@@ -317,20 +269,6 @@ const ExerciseUpdate = () => {
           </select>
         )}
 
-        {/* <input
-          type='text'
-          defaultValue={exercise.typology}
-          onChange={(e) => {
-            setTypology(e.target.value);
-          }}
-        />
-        <input
-          type='text'
-          defaultValue={exercise.muscularGroup}
-          onChange={(e) => {
-            setMuscularGroup(e.target.value);
-          }}
-        /> */}
         <textarea
           // value={description}
           required
