@@ -8,7 +8,7 @@ import './Login.css';
 const Login = () => {
   const [token, setToken] = useToken();
   const [userRole, setUserRole] = useRole();
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email,
+          name,
           password,
         }),
       });
@@ -54,12 +54,12 @@ const Login = () => {
   return (
     <main className='Login'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='email'>Email:</label>
+        <label htmlFor='name'>Usuario:</label>
         <input
-          type='email'
-          name='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type='text'
+          name='name'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <label htmlFor='pass'>Contraseña:</label>
