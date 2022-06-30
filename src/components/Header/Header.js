@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useUser } from '../../UserContext';
+import { useRole } from '../../RoleContext';
 
 import './Header.css';
 
 const Header = () => {
   const [user] = useUser();
   const [token, setToken] = useToken();
+  const [userRole] = useRole();
 
   return (
     <header>
@@ -28,7 +30,7 @@ const Header = () => {
             <NavLink to='/signup'>Registrarse</NavLink>
           </div>
         )}
-        {token && (
+        {token && userRole === 'admin' && (
           <div className='Button'>
             <NavLink to='/new'>Nuevo ejercicio</NavLink>
           </div>
