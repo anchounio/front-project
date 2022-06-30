@@ -7,16 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import { RoleProvider } from './RoleContext';
 import { BrowserRouter } from 'react-router-dom';
 import { TokenProvider } from './TokenContext';
+import { UserProvider } from './UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <TokenProvider>
     <RoleProvider>
-      <BrowserRouter>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </BrowserRouter>
+      </UserProvider>
     </RoleProvider>
   </TokenProvider>
 );
