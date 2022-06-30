@@ -71,11 +71,37 @@ const ExerciseCreate = () => {
         />
         <input
           type='text'
+          required
           onChange={(e) => {
             setName(e.target.value);
           }}
         />
-        <input
+
+        <select
+          name='typology'
+          required
+          onChange={(e) => setTypology(e.target.value)}
+        >
+          <option value='' defaultValue></option>
+          <option value='aerobico'>aerobico</option>
+          <option value='anaerobico'>anaerobico</option>
+          <option value='flexibilidad'>flexibilidad</option>
+          <option value='resistencia'>resistencia</option>
+        </select>
+
+        <select
+          name='muscularGroup'
+          required
+          onChange={(e) => setMuscularGroup(e.target.value)}
+        >
+          <option value='' defaultValue></option>
+          <option value='brazos'>Brazos</option>
+          <option value='piernas'>Piernas</option>
+          <option value='espalda'>Espalda</option>
+          <option value='pecho'>Pecho</option>
+        </select>
+
+        {/* <input
           type='text'
           onChange={(e) => {
             setTypology(e.target.value);
@@ -86,9 +112,10 @@ const ExerciseCreate = () => {
           onChange={(e) => {
             setMuscularGroup(e.target.value);
           }}
-        />
+        /> */}
         <textarea
           value={description}
+          required
           onChange={(e) => setDescription(e.target.value)}
         />
 
