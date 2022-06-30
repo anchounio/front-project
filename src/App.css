@@ -1,13 +1,16 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --blue-color: #1da1f2;
+  --blue-color: #1da1f2;
+  --blue-green-colour: rgba(0, 139, 139, 0.7);
+  --error-colour: rgb(187, 36, 36);
 }
 
 p.Error {
-    color: rgb(187, 36, 36);
+  color: var(--error-colour);
+  font-weight: bold;
 }

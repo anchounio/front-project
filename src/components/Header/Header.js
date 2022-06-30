@@ -30,12 +30,13 @@ const Header = () => {
 
   return (
     <header>
-      <h1>
-        <p id='Cabecera'>Gimnasio Los Chapuceros</p>
+      <div id='Gym'>
+        <h1 id='Cabecera'>Gimnasio Los Chapuceros</h1>
         <NavLink to='/'>
           <img src='/logo.jpg' alt='logo' id='Logo' />
         </NavLink>
-      </h1>
+      </div>
+
       <div className='Buttons'>
         {token && <p>@{username}</p>}
         {!token && (
