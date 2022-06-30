@@ -101,18 +101,6 @@ const ExerciseCreate = () => {
           <option value='pecho'>Pecho</option>
         </select>
 
-        {/* <input
-          type='text'
-          onChange={(e) => {
-            setTypology(e.target.value);
-          }}
-        />
-        <input
-          type='text'
-          onChange={(e) => {
-            setMuscularGroup(e.target.value);
-          }}
-        /> */}
         <textarea
           value={description}
           required
