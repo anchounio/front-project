@@ -172,8 +172,6 @@ const ExerciseSearch = () => {
               <li key={exercise.id} data-id={exercise.id}>
                 <div>
                   <p>{exercise.name}</p>
-                  <p>{exercise.typology}</p>
-                  <p>{exercise.muscularGroup}</p>
                   {exercise.photo && (
                     <img
                       src={`http://localhost:4000/${exercise.photo}`}
@@ -182,18 +180,6 @@ const ExerciseSearch = () => {
                   )}
                 </div>
                 <footer>
-                  <div>
-                    <div
-                      className={`heart ${
-                        token && exercise.likedByMe && 'IsAnimating'
-                      }`}
-                      onClick={token && handleLike}
-                    ></div>
-                    <p>{exercise.likes} likes</p>
-                  </div>
-                  {token && exercise.owner === 1 && (
-                    <button onClick={handleDeleteExercise}>Eliminar</button>
-                  )}
                   {token && (
                     <Link to={`/details/${exercise.id}`}>Detalles</Link>
                   )}
