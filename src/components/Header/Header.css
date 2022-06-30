@@ -1,7 +1,6 @@
 div.App > header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--blue-green-colour);
   padding: 1rem;
 }
@@ -33,6 +32,8 @@ div.App > header {
 
 div.Buttons {
   display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 div.Buttons > p {
@@ -65,4 +66,9 @@ div.Buttons > div.Button a {
 
 div.Buttons > div.Button > p {
   color: black;
+}
+
+.Bienvenido {
+  color: white;
+  text-align-last: left;
 }

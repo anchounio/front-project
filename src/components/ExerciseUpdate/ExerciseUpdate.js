@@ -1,4 +1,3 @@
-import Select from 'react-select';
 import { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
