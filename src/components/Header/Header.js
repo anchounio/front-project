@@ -10,15 +10,14 @@ const Header = () => {
 
   return (
     <header>
+      {token && <p className='Bienvenido'>Sesión iniciada como {user}</p>}
       <div id='Gym'>
         <h1 id='Cabecera'>Gimnasio Los Chapuceros</h1>
         <NavLink to='/'>
           <img src='/logo.jpg' alt='logo' id='Logo' />
         </NavLink>
       </div>
-
       <div className='Buttons'>
-        {token && <p>{user}</p>}
         {!token && (
           <div className='Button'>
             <NavLink to='/login'>Iniciar sesión</NavLink>
