@@ -6,12 +6,6 @@ div.App > header {
   padding: 1rem;
 }
 
-div.App > header h1 {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-}
-
 #Gym {
   display: flex;
   flex-direction: row-reverse;
@@ -20,8 +14,10 @@ div.App > header h1 {
 }
 
 #Cabecera {
+  text-decoration: none;
   color: white;
   text-shadow: 2px 2px 4px black;
+  text-align: center;
 }
 
 #Logo {
