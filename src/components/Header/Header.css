@@ -1,49 +1,68 @@
 div.App > header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--blue-color);
-    padding: 2rem;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blue-green-colour);
+  padding: 1rem;
 }
 
-div.App > header a {
-    text-decoration: none;
-    color: white;
+#Gym {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0 0 1rem 0;
+}
+
+#Cabecera {
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  text-align: center;
+}
+
+#Logo {
+  max-width: 80px;
+  margin: 1rem 0;
+  border-radius: 20%;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+#Logo:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
 div.Buttons {
-    display: flex;
-    gap: 1rem;
+  display: flex;
 }
 
 div.Buttons > p {
-    align-self: center;
-    font-weight: bold;
+  align-self: center;
+  font-weight: bold;
 }
 
 div.Buttons > div.Button {
-    padding: 0.5rem 0;
-    width: 80px;
-    font-weight: bold;
-    text-align: center;
-    background-color: white;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 0;
+  width: 120px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
 }
 
 div.Buttons > div.Button:active {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
 div.Buttons > div.Button:first-child {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 div.Buttons > div.Button a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 div.Buttons > div.Button > p {
-    color: black;
+  color: black;
 }

@@ -5,34 +5,39 @@ import { useUser } from '../../UserContext';
 import './Header.css';
 
 const Header = () => {
+
   const [user] = useUser();
   const [token, setToken] = useToken();
 
   return (
     <header>
-      <h1>
-        <NavLink to='/'>Mini Twitter</NavLink>
-      </h1>
+      <div id='Gym'>
+        <h1 id='Cabecera'>Gimnasio Los Chapuceros</h1>
+        <NavLink to='/'>
+          <img src='/logo.jpg' alt='logo' id='Logo' />
+        </NavLink>
+      </div>
+
       <div className='Buttons'>
-        {token && <p>{user}</p>}
+        {token && <p>{name}</p>}
         {!token && (
           <div className='Button'>
-            <NavLink to='/login'>Log In</NavLink>
+            <NavLink to='/login'>Iniciar sesión</NavLink>
           </div>
         )}
         {!token && (
           <div className='Button'>
-            <NavLink to='/signup'>Sign Up</NavLink>
+            <NavLink to='/signup'>Registrarse</NavLink>
           </div>
         )}
         {token && (
           <div className='Button'>
-            <NavLink to='/new'>Nuevo</NavLink>
+            <NavLink to='/new'>Nuevo ejercicio</NavLink>
           </div>
         )}
         {token && (
           <div className='Button' onClick={() => setToken(null)}>
-            <p>Logout</p>
+            <p>Salir de sesión</p>
           </div>
         )}
       </div>
