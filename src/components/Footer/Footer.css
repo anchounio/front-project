@@ -1,9 +1,13 @@
 div.App > footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--blue-color);
-    color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--blue-green-colour);
+  color: white;
+}
+
+div.App > footer > p {
+  font-size: 0.8rem;
 }
