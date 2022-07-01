@@ -15,25 +15,69 @@ ul.ExerciseList {
 }
 
 ul.ExerciseList > li {
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.374);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 ul.ExerciseList > li:not(:first-child) {
   margin: 1rem 0;
 }
 
-ul.ExerciseList > li > div {
+ul.ExerciseList > li > div.List {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-ul.ExerciseList > li > div > p {
+ul.ExerciseList > li > div.List > p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
 }
 
-ul.ExerciseList > li > div > img {
+ul.ExerciseList > li > div.List > p > span {
+  font-weight: bold;
+}
+
+ul.ExerciseList > li > div.List > img {
   width: 100%;
 }
+
+ul.ExerciseList > li > footer > div > p {
+  margin: 0 0 1rem 1rem;
+}
+
+ul.ExerciseList > li > footer > div.Favourites {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+ul.ExerciseList > li > footer > div.Changing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid black;
+  padding: 1rem;
+}
+
+ul.ExerciseList > li > footer > div.Changing > a.Update {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  width: 120px;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin: 1rem 0;
+  text-decoration: none;
+  color: black;
+}
+ul.ExerciseList > li > footer > div.Changing > a.Update:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 
 ul.ExerciseList > li > footer > div > div.heart {
   cursor: pointer;
