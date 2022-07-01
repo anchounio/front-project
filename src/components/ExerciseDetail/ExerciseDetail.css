@@ -34,3 +34,22 @@ ul.ExerciseList > li > div > p {
 ul.ExerciseList > li > div > img {
   width: 100%;
 }
+
+ul.ExerciseList > li > footer > div > div.heart {
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+  background-image: url('/public/heart_animation.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+}
+
+ul.ExerciseList > li > footer > div > div.heart:hover {
+  background-position: right;
+}
+
+ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
+  animation: heart-burst 0.8s steps(28) 1;
+  animation-fill-mode: forwards;
+}
