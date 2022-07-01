@@ -62,23 +62,6 @@ ul.ExerciseList > li > footer > div.Changing {
   padding: 1rem;
 }
 
-ul.ExerciseList > li > footer > div.Changing > a.Update {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0;
-  width: 120px;
-  font-weight: bold;
-  background-color: white;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 20%;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  margin: 1rem 0;
-  text-decoration: none;
-  color: black;
-}
-ul.ExerciseList > li > footer > div.Changing > a.Update:active {
-  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
-
 ul.ExerciseList > li > footer > div > div.heart {
   cursor: pointer;
   height: 70px;
@@ -96,4 +79,22 @@ ul.ExerciseList > li > footer > div > div.heart:hover {
 ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
   animation: heart-burst 0.8s steps(28) 1;
   animation-fill-mode: forwards;
+}
+
+ul.ExerciseList > li > footer > div.Changing > a.Update {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  width: 120px;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin: 1rem 0;
+  text-decoration: none;
+  color: black;
+}
+ul.ExerciseList > li > footer > div.Changing > a.Update:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
