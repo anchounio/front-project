@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './ExerciseDetail.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useRole } from '../../RoleContext';
 
@@ -13,10 +13,15 @@ const ExerciseDetail = () => {
   const { id } = useParams();
   const [userRole] = useRole();
 
+  const idExercise = id;
+
   const showExercise = async () => {
     setLoading(true);
 
     console.log(userRole);
+    console.log('la id de este ejercicio es');
+    console.log(id);
+
     // Vaciamos el error.
     setError(null);
 
@@ -70,7 +75,7 @@ const ExerciseDetail = () => {
 
     const li = e.target.closest('li');
 
-    const idExercise = li.getAttribute('data-id');
+    //const idExercise = li.getAttribute('data-id');
 
     try {
       const res = await fetch(
@@ -107,7 +112,7 @@ const ExerciseDetail = () => {
 
     const li = e.target.closest('li');
 
-    const idExercise = li.getAttribute('data-id');
+    //const idExercise = li.getAttribute('data-id');
 
     try {
       const res = await fetch(
@@ -141,9 +146,9 @@ const ExerciseDetail = () => {
     setError(null);
 
     if (window.confirm('¿Deseas eliminar el ejercicio?')) {
-      const li = e.target.closest('li');
+      //const li = e.target.closest('li');
 
-      const idExercise = li.getAttribute('data-id');
+      //const idExercise = li.getAttribute('data-id');
 
       try {
         const res = await fetch(
@@ -161,6 +166,9 @@ const ExerciseDetail = () => {
         if (body.status === 'error') {
           setError(body.message);
         } else {
+          // Si no tenemos token o la petición ha ido bien redireccionamos
+          // a la página principal.
+          return <Navigate to='/' />;
           setUpdate(!update);
         }
       } catch (err) {
@@ -208,7 +216,7 @@ const ExerciseDetail = () => {
               <button onClick={handleDeleteExercise}>Eliminar</button>
             )}
             {token && userRole === 'admin' && (
-              <Link to={`/update/${exercise.id}`}>Actualizar</Link>
+              <Link to={`/update/${idExercise}`}>Actualizar</Link>
             )}
           </footer>
         </li>
