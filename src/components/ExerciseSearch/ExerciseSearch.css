@@ -7,22 +7,32 @@ main.ExerciseSearch {
 
 main.ExerciseSearch > form {
   display: flex;
+  flex-direction: column;
   margin-top: 2rem;
 }
 
-main.ExerciseSearch > form > input {
-  height: 40px;
-  width: 250px;
-  padding: 0.2rem;
-  font-size: 1.3rem;
-  border: 1px solid rgb(118, 118, 118);
+main.ExerciseSearch > form > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-main.ExerciseSearch > form > button {
-  height: 40px;
-  padding: 0 0.4rem;
-  border: 1px solid rgb(118, 118, 118);
-  border-left: none;
+main.ExerciseSearch > form > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+main.ExerciseSearch > form > div > div > label {
+  font-weight: bold;
+  text-align: center;
+}
+
+main.ExerciseSearch > form > div > div > select {
+  margin: 0 1rem 1rem 0;
+  width: 100%;
+  text-align: center;
 }
 
 main.ExerciseSearch > p.Error {
@@ -32,82 +42,67 @@ main.ExerciseSearch > p.Error {
 ul.ExerciseList {
   margin-top: 2rem;
   list-style: none;
-}
-
-ul.ExerciseList > li {
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.374);
-}
-
-ul.ExerciseList > li:not(:first-child) {
-  margin: 1rem 0;
-}
-
-ul.ExerciseList > li > header {
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  background-color: rgb(230, 230, 230);
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
 }
 
 ul.ExerciseList > li > div {
   display: flex;
   flex-direction: column;
-}
-
-ul.ExerciseList > li > div > p {
-  padding: 1rem;
-}
-
-ul.ExerciseList > li > div > img {
-  width: 100%;
-}
-
-ul.ExerciseList > li > footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-ul.ExerciseList > li > footer > div {
-  display: flex;
   align-items: center;
 }
 
-ul.ExerciseList > li > footer > div > div.heart {
-  cursor: pointer;
-  height: 70px;
-  width: 70px;
-  background-image: url('/public/heart_animation.png');
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 2900%;
-}
-
-ul.ExerciseList > li > footer > div > div.heart:hover {
-  background-position: right;
-}
-
-ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
-  animation: heart-burst 0.8s steps(28) 1;
-  animation-fill-mode: forwards;
-}
-
-ul.ExerciseList > li > footer > button {
-  width: 80px;
-  margin-right: 1rem;
-  border: 1px solid gray;
-  align-self: center;
+ul.ExerciseList > li > div > footer {
+  display: flex;
+  justify-content: center;
   padding: 0.5rem 0;
+  width: 90px;
   font-weight: bold;
   background-color: white;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin: 1rem 0;
 }
 
-@keyframes heart-burst {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
+ul.ExerciseList > li > div > footer:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
+
+ul.ExerciseList > li > div > footer > a {
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  font-weight: bold;
+}
+
+/* div.Buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+div.Buttons > p {
+}
+
+div.Buttons > div.Button {
+}
+
+div.Buttons > div.Button:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+div.Buttons > div.Button:first-child {
+  margin-right: 1rem;
+}
+
+div.Buttons > div.Button a {
+  text-decoration: none;
+  color: black;
+}
+
+div.Buttons > div.Button > p {
+  color: black;
+} */

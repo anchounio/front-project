@@ -144,21 +144,35 @@ const ExerciseSearch = () => {
   return (
     <main className='ExerciseSearch'>
       <form onSubmit={handleSubmit}>
-        <select name='typology' onChange={(e) => setTypology(e.target.value)}>
-          <option value='' defaultValue></option>
-          <option value='aerobico'>aerobico</option>
-          <option value='anaerobico'>anaerobico</option>
-          <option value='flexibilidad'>flexibilidad</option>
-          <option value='resistencia'>resistencia</option>
-        </select>
+        <div>
+          <div>
+            <label htmlFor='typology'>Tipología</label>
+            <select
+              name='typology'
+              onChange={(e) => setTypology(e.target.value)}
+            >
+              <option value='' defaultValue></option>
+              <option value='aerobico'>aerobico</option>
+              <option value='anaerobico'>anaerobico</option>
+              <option value='flexibilidad'>flexibilidad</option>
+              <option value='resistencia'>resistencia</option>
+            </select>
+          </div>
 
-        <select name='muscular' onChange={(e) => setMuscular(e.target.value)}>
-          <option value='' defaultValue></option>
-          <option value='brazos'>Brazos</option>
-          <option value='piernas'>Piernas</option>
-          <option value='espalda'>Espalda</option>
-          <option value='pecho'>Pecho</option>
-        </select>
+          <div>
+            <label htmlFor='muscular'>Grupo muscular</label>
+            <select
+              name='muscular'
+              onChange={(e) => setMuscular(e.target.value)}
+            >
+              <option value='' defaultValue></option>
+              <option value='brazos'>Brazos</option>
+              <option value='piernas'>Piernas</option>
+              <option value='espalda'>Espalda</option>
+              <option value='pecho'>Pecho</option>
+            </select>
+          </div>
+        </div>
 
         <button disabled={loading}>Buscar</button>
       </form>
@@ -179,11 +193,13 @@ const ExerciseSearch = () => {
                     />
                   )}
                 </div>
-                <footer>
-                  {token && (
-                    <Link to={`/details/${exercise.id}`}>Detalles</Link>
-                  )}
-                </footer>
+                <div>
+                  <footer>
+                    {token && (
+                      <Link to={`/details/${exercise.id}`}>Detalles</Link>
+                    )}
+                  </footer>
+                </div>
               </li>
             );
           })}
