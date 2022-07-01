@@ -186,18 +186,31 @@ const ExerciseDetail = () => {
       <ul className='ExerciseList'>
         <li key={exercise.id} data-id={exercise.id}>
           <div>
-            <p>Nombre: {exercise.name}</p>
-            <p>Descripción: {exercise.description}</p>
-            <p>Tipología: {exercise.typology}</p>
-            <p>Grupo muscular: {exercise.muscularGroup}</p>
+            <p>
+              <span>Nombre:</span> {exercise.name}
+            </p>
+            <p>
+              <span>Descripción:</span> {exercise.description}
+            </p>
+            <p>
+              <span>Tipología:</span> {exercise.typology}
+            </p>
+            <p>
+              <span>Grupo muscular:</span>
+              {exercise.muscularGroup}
+            </p>
             {exercise.photo && (
               <img
                 src={`http://localhost:4000/${exercise.photo}`}
                 alt='Imagen adjunta'
               />
             )}
-            <p>Likes: {exercise.likes}</p>
-            <p>Favorito: {exercise.favourites}</p>
+            <p>
+              <span>Likes:</span> {exercise.likes}
+            </p>
+            <p>
+              <span>Favorito:</span> {exercise.favourites}
+            </p>
           </div>
           <footer>
             <div>
