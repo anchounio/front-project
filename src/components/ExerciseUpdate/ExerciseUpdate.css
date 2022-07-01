@@ -8,11 +8,23 @@ main.ExerciseUpdate {
 main.ExerciseUpdate > form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.2rem;
+  width: 300px;
+}
+
+main.ExerciseUpdate > form > label {
+  font-weight: bold;
+}
+
+main.ExerciseUpdate > form > select {
+  width: 175px;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 main.ExerciseUpdate > form > textarea {
-  width: 600px;
+  max-width: 200px;
   height: 100px;
   margin-bottom: 1rem;
   padding: 0.6rem;
@@ -20,6 +32,12 @@ main.ExerciseUpdate > form > textarea {
 
 main.ExerciseUpdate > form > input {
   margin-bottom: 1rem;
+  width: 175px;
+  padding: 0 0.2rem;
+}
+
+main.ExerciseUpdate > form > input:first-child {
+  width: 280px;
 }
 
 main.ExerciseUpdate > form > button {
@@ -32,7 +50,21 @@ main.ExerciseUpdate > form > button {
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
+main.ExerciseUpdate > form > button {
+  width: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  align-self: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+main.ExerciseUpdate > form > button:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
 main.ExerciseUpdate > p.Error {
   margin-top: 1.5rem;
-  color: rgb(187, 36, 36);
+  color: var(--error-colour);
 }

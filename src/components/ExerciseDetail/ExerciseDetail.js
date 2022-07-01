@@ -185,7 +185,7 @@ const ExerciseDetail = () => {
     <main className='ExerciseDetail'>
       <ul className='ExerciseList'>
         <li key={exercise.id} data-id={exercise.id}>
-          <div>
+          <div className='List'>
             <p>
               <span>Nombre:</span> {exercise.name}
             </p>
@@ -222,15 +222,19 @@ const ExerciseDetail = () => {
               ></div>
               <p>{exercise.likes} likes</p>
             </div>
-            <div className='favourites'>
+            <div className='Favourites'>
               <button onClick={token && handleFavourite}>Favorito</button>
             </div>
-            {token && userRole === 'admin' && (
-              <button onClick={handleDeleteExercise}>Eliminar</button>
-            )}
-            {token && userRole === 'admin' && (
-              <Link to={`/update/${idExercise}`}>Actualizar</Link>
-            )}
+            <div className='Changing'>
+              {token && userRole === 'admin' && (
+                <button onClick={handleDeleteExercise}>Eliminar</button>
+              )}
+              {token && userRole === 'admin' && (
+                <Link to={`/update/${idExercise}`} className='Update'>
+                  Actualizar
+                </Link>
+              )}
+            </div>
           </footer>
         </li>
       </ul>
