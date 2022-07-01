@@ -209,9 +209,7 @@ const ExerciseUpdate = () => {
               Brazos
             </option>
             <option value='piernas'>Piernas</option>
-            <option value='espalda' selected>
-              Espalda
-            </option>
+            <option value='espalda'>Espalda</option>
             <option value='pecho'>Pecho</option>
           </select>
         )}
@@ -228,9 +226,7 @@ const ExerciseUpdate = () => {
             <option value='piernas' defaultValue>
               Piernas
             </option>
-            <option value='espalda' selected>
-              Espalda
-            </option>
+            <option value='espalda'>Espalda</option>
             <option value='pecho'>Pecho</option>
           </select>
         )}

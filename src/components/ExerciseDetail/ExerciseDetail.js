@@ -26,7 +26,7 @@ const ExerciseDetail = () => {
     setError(null);
 
     console.log('init likes');
-    console.log(exercise);
+
     console.log(exercise.likes);
     console.log('init favourites');
     console.log(exercise.favourites);
@@ -53,6 +53,7 @@ const ExerciseDetail = () => {
         console.log(error);
       } else {
         setExercise(body.data.exercise);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -97,6 +98,7 @@ const ExerciseDetail = () => {
         setUpdate(!update);
         console.log('likes');
         console.log(exercise.likes);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -133,7 +135,7 @@ const ExerciseDetail = () => {
       } else {
         setUpdate(!update);
         console.log('favoritos');
-        console.log(exercise.favourites);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -180,8 +182,6 @@ const ExerciseDetail = () => {
       }
     }
   };
-
-  console.log('hola');
 
   return (
     <main className='ExerciseDetail'>
