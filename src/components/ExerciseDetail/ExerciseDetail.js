@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './ExerciseDetail.css';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useRole } from '../../RoleContext';
 
@@ -12,7 +12,7 @@ const ExerciseDetail = () => {
   const [update, setUpdate] = useState(false);
   const { id } = useParams();
   const [userRole] = useRole();
-
+  const navigate = useNavigate();
   const idExercise = id;
 
   const showExercise = async () => {
@@ -26,6 +26,7 @@ const ExerciseDetail = () => {
     setError(null);
 
     console.log('init likes');
+
     console.log(exercise.likes);
     console.log('init favourites');
     console.log(exercise.favourites);
@@ -52,6 +53,7 @@ const ExerciseDetail = () => {
         console.log(error);
       } else {
         setExercise(body.data.exercise);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -96,6 +98,7 @@ const ExerciseDetail = () => {
         setUpdate(!update);
         console.log('likes');
         console.log(exercise.likes);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -132,7 +135,7 @@ const ExerciseDetail = () => {
       } else {
         setUpdate(!update);
         console.log('favoritos');
-        console.log(exercise.favourites);
+        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -168,7 +171,8 @@ const ExerciseDetail = () => {
         } else {
           // Si no tenemos token o la petición ha ido bien redireccionamos
           // a la página principal.
-          return <Navigate to='/' />;
+          // return <Navigate to='/' />;
+          navigate('/');
           setUpdate(!update);
         }
       } catch (err) {
@@ -178,8 +182,6 @@ const ExerciseDetail = () => {
       }
     }
   };
-
-  console.log('hola');
 
   return (
     <main className='ExerciseDetail'>
