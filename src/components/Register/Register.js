@@ -90,7 +90,7 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button disabled={loading}>Sign Up</button>
+        <button disabled={loading}>Registrarse</button>
       </form>
       {error && <p className='Error'>{error}</p>}
       {message && <p className='Success'>{message}</p>}
