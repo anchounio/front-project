@@ -1,0 +1,124 @@
+main.ExerciseFavourites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+main.ExerciseFavourites > p.Error {
+  margin-top: 1.5rem;
+}
+
+ul.ExerciseList {
+  margin-top: 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+ul.ExerciseList > li > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 1em 0 1em;
+}
+
+ul.ExerciseList > li > div > footer {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  width: 90px;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin: 1rem 0;
+}
+
+ul.ExerciseList > li > div > footer:active {
+  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+ul.ExerciseList > li > div > footer > a {
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  font-weight: bold;
+}
+
+img {
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  main.ExerciseFavourites > form {
+    width: 512px;
+  }
+
+  main.ExerciseFavourites > form > div {
+    gap: 7rem;
+  }
+
+  main.ExerciseFavourites > form > div > div > label {
+    font-size: 1.3rem;
+  }
+
+  main.ExerciseFavourites > form > div > div > select {
+    font-size: 1.3rem;
+  }
+
+  ul.ExerciseList > li > div > p {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  main.ExerciseFavourites > p.Error {
+    font-size: 1.8rem;
+  }
+
+  main.ExerciseFavourites > form {
+    min-width: 700px;
+  }
+
+  main.ExerciseFavourites > form > div {
+    gap: 10rem;
+  }
+
+  main.ExerciseFavourites > form > div > div > label {
+    font-size: 1.8rem;
+  }
+
+  main.ExerciseFavourites > form > div > div > select {
+    font-size: 1.8rem;
+  }
+
+  main.ExerciseFavourites > form > button {
+    font-size: 1.6rem;
+    width: 180px;
+  }
+
+  ul.ExerciseList {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    gap: 2rem;
+  }
+
+  ul.ExerciseList > li > div > p {
+    font-size: 1.8rem;
+  }
+
+  ul.ExerciseList > li > div > footer {
+    width: 120px;
+  }
+
+  ul.ExerciseList > li > div > footer > a {
+    font-size: 1.5rem;
+  }
+}

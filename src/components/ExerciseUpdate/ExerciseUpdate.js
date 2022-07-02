@@ -123,6 +123,7 @@ const ExerciseUpdate = () => {
         <label htmlFor='name'>Nombre</label>
         <input
           type='text'
+          maxLength={20}
           required
           defaultValue={exercise.name}
           onChange={(e) => {

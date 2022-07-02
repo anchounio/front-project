@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useToken } from '../../TokenContext';
 import { Link } from 'react-router-dom';
-import { useRole } from '../../RoleContext';
+import { useIdUser } from '../../IdUserContext';
 
 import './ExerciseFavourites.css';
 
@@ -10,15 +10,13 @@ const ExerciseFavourites = () => {
   const [loading, setLoading] = useState(false);
   const [exercises, setExercises] = useState(null);
   const [error, setError] = useState(null);
-  const [userRole, setUserRole] = useRole();
+  const [idUser, setIdUser] = useIdUser();
 
   const getFavExercises = async () => {
     setLoading(true);
 
     // Vaciamos el error.
     setError(null);
-    console.log(userRole);
-    console.log(token);
 
     // Si hay token nos interesa mandarlo para comprobar los exercises de los que somos dueños.
     const params = token
@@ -31,13 +29,11 @@ const ExerciseFavourites = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:4000/exercises?typology=${typology}&muscular=${muscular}`,
+        `http://localhost:4000/exercises/${idUser}/favourites`,
         params
       );
 
       const body = await res.json();
-
-      console.log(body);
 
       if (body.status === 'error') {
         setExercises(null);
@@ -45,8 +41,6 @@ const ExerciseFavourites = () => {
         console.log(error);
       } else {
         setExercises(body.data.exercises);
-
-        console.log(exercises);
       }
     } catch (err) {
       setError(err.message);
