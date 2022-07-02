@@ -8,18 +8,21 @@ import { RoleProvider } from './RoleContext';
 import { BrowserRouter } from 'react-router-dom';
 import { TokenProvider } from './TokenContext';
 import { UserProvider } from './UserContext';
+import { IdUserProvider } from './IdUserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <TokenProvider>
     <RoleProvider>
-      <UserProvider>
-        <BrowserRouter>
-          <React.StrictMode>
-            <App />
-          </React.StrictMode>
-        </BrowserRouter>
-      </UserProvider>
+      <IdUserProvider>
+        <UserProvider>
+          <BrowserRouter>
+            <React.StrictMode>
+              <App />
+            </React.StrictMode>
+          </BrowserRouter>
+        </UserProvider>
+      </IdUserProvider>
     </RoleProvider>
   </TokenProvider>
 );
