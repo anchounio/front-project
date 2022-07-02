@@ -12,8 +12,6 @@ const Header = () => {
   const [userRole] = useRole();
   const [idUser, setIdUser] = useIdUser();
 
-  console.log(idUser);
-
   return (
     <header>
       {token && <p className='Bienvenido'>Sesión iniciada como {user}</p>}

@@ -17,8 +17,6 @@ const ExerciseUpdate = () => {
 
   const { id } = useParams();
 
-  console.log('la typology es:' + exercise.typology);
-
   const showExercise = async () => {
     setLoading(true);
 
@@ -39,15 +37,12 @@ const ExerciseUpdate = () => {
 
       const body = await res.json();
 
-      // console.log(body);
-
       if (body.status === 'error') {
         setExercise(null);
         setError(body.message);
         console.log(error);
       } else {
         setExercise(body.data.exercise);
-        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);

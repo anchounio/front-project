@@ -25,7 +25,6 @@ const Login = () => {
 
     setError(null);
     setLoading(true);
-    console.log(userRole);
 
     try {
       const res = await fetch('http://localhost:4000/login', {
@@ -40,17 +39,14 @@ const Login = () => {
       });
 
       const body = await res.json();
-      console.log(body);
+
       if (body.status === 'error') {
         setError(body.message);
       } else {
         setToken(body.data.token);
         setUserRole(body.data.role);
         setIdUser(body.data.idUser);
-        //console.log(name);
         setUser(name);
-        console.log(user);
-        console.log(idUser);
       }
     } catch (err) {
       console.error(err);
