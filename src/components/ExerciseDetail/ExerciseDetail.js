@@ -67,7 +67,19 @@ const ExerciseDetail = () => {
     setLoading(true);
     setError(null);
 
-    e.target.classList.toggle('IsAnimating');
+    // if (exercise.likedByMe === 0) {
+    //   e.target.classList.toggle('IsAnimatingFor');
+    // } else if (exercise.likedByMe === 1) {
+    //   e.target.classList.toggle('IsAnimatingBack');
+    // }
+
+    // if (exercise.likedByMe) {
+    //   e.target.classList.toggle('IsAnimatingBack');
+    // } else {
+    //   e.target.classList.toggle('IsAnimatingFor');
+    // }
+
+    // e.target.classList.toggle('IsAnimating');
 
     try {
       const res = await fetch(
@@ -195,12 +207,10 @@ const ExerciseDetail = () => {
           <footer>
             <div>
               <div
-                className={`heart ${
-                  token && exercise.likedByMe && 'IsAnimating'
-                }`}
+                className={`heart ${exercise.likedByMe ? 'Liked' : 'NotLiked'}`}
                 onClick={token && handleLike}
               ></div>
-              <p>{exercise.likes} likes</p>
+              <p>{exercise.totalLikes} likes</p>
             </div>
             <div className='Favourites'>
               <button onClick={token && handleFavourite}>Favorito</button>
