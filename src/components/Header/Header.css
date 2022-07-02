@@ -10,10 +10,10 @@ div.App > header {
   flex-direction: row-reverse;
   justify-content: space-between;
   margin: 0 0 1rem 0;
+  gap: 1rem;
 }
 
 #Cabecera {
-  text-decoration: none;
   color: white;
   text-shadow: 2px 2px 4px black;
   text-align: center;
@@ -71,4 +71,58 @@ div.Buttons > div.Button > p {
 .Bienvenido {
   color: white;
   text-align-last: left;
+}
+
+@media only screen and (min-width: 600px) {
+  #Gym {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .Bienvenido {
+    font-size: 1.5rem;
+  }
+
+  #Gym {
+    font-size: 1.5rem;
+  }
+
+  #Logo {
+    min-width: 120px;
+  }
+
+  .Buttons {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .Button {
+    min-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Bienvenido {
+    font-size: 2rem;
+  }
+
+  #Gym {
+    font-size: 2rem;
+  }
+
+  #Logo {
+    min-width: 150px;
+  }
+
+  .Buttons {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .Button {
+    min-width: 300px;
+  }
 }

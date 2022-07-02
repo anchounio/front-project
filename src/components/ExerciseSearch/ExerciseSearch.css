@@ -79,31 +79,72 @@ ul.ExerciseList > li > div > footer > a {
   font-weight: bold;
 }
 
-/* div.Buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+img {
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 1rem;
 }
 
-div.Buttons > p {
+@media only screen and (min-width: 600px) {
+  main.ExerciseSearch > form {
+    width: 512px;
+  }
+
+  main.ExerciseSearch > form > div {
+    gap: 7rem;
+  }
+
+  main.ExerciseSearch > form > div > div > label {
+    font-size: 1.3rem;
+  }
+
+  main.ExerciseSearch > form > div > div > select {
+    font-size: 1.3rem;
+  }
+
+  ul.ExerciseList > li > div > p {
+    font-size: 1.3rem;
+  }
 }
 
-div.Buttons > div.Button {
-}
+@media only screen and (min-width: 760px) {
+  main.ExerciseSearch > form {
+    min-width: 700px;
+  }
 
-div.Buttons > div.Button:active {
-  box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
-}
+  main.ExerciseSearch > form > div {
+    gap: 10rem;
+  }
 
-div.Buttons > div.Button:first-child {
-  margin-right: 1rem;
-}
+  main.ExerciseSearch > form > div > div > label {
+    font-size: 1.8rem;
+  }
 
-div.Buttons > div.Button a {
-  text-decoration: none;
-  color: black;
-}
+  main.ExerciseSearch > form > div > div > select {
+    font-size: 1.8rem;
+  }
 
-div.Buttons > div.Button > p {
-  color: black;
-} */
+  main.ExerciseSearch > form > button {
+    font-size: 1.6rem;
+    width: 180px;
+  }
+
+  ul.ExerciseList {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    gap: 2rem;
+  }
+
+  ul.ExerciseList > li > div > p {
+    font-size: 1.8rem;
+  }
+
+  ul.ExerciseList > li > div > footer {
+    width: 120px;
+  }
+
+  ul.ExerciseList > li > div > footer > a {
+    font-size: 1.5rem;
+  }
+}

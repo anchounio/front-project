@@ -152,10 +152,10 @@ const ExerciseSearch = () => {
               onChange={(e) => setTypology(e.target.value)}
             >
               <option value='' defaultValue></option>
-              <option value='aerobico'>aerobico</option>
-              <option value='anaerobico'>anaerobico</option>
-              <option value='flexibilidad'>flexibilidad</option>
-              <option value='resistencia'>resistencia</option>
+              <option value='aerobico'>Aeróbico</option>
+              <option value='anaerobico'>Anaeróbico</option>
+              <option value='flexibilidad'>Flexibilidad</option>
+              <option value='resistencia'>Resistencia</option>
             </select>
           </div>
 
