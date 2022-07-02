@@ -212,7 +212,11 @@ const ExerciseDetail = () => {
               ></div>
               <p>{exercise.totalLikes} likes</p>
             </div>
-            <div className='Favourites'>
+            <div
+              className={
+                exercise.favedByMe ? 'AddedFavourite' : 'NotAddedFavourite'
+              }
+            >
               <button onClick={token && handleFavourite}>Favorito</button>
             </div>
             <div className='Changing'>
