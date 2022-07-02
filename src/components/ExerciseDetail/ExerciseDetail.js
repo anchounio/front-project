@@ -25,12 +25,6 @@ const ExerciseDetail = () => {
     // Vaciamos el error.
     setError(null);
 
-    console.log('init likes');
-
-    console.log(exercise.likes);
-    console.log('init favourites');
-    console.log(exercise.favourites);
-
     // Si hay token nos interesa mandarlo para comprobar los exercises de los que somos dueños.
     const params = token
       ? {
@@ -53,7 +47,6 @@ const ExerciseDetail = () => {
         console.log(error);
       } else {
         setExercise(body.data.exercise);
-        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -63,9 +56,10 @@ const ExerciseDetail = () => {
   };
 
   // Mediante "useEffect" hacemos que la primera vez que se monta el componente se
-  // cargue de forma automática la lista de exercises.
+  // cargue de forma automática la lista de exercises y que se vuelva a cargar cada vez que se modifica el estado update
   useEffect(() => {
     showExercise();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
@@ -74,10 +68,6 @@ const ExerciseDetail = () => {
     setError(null);
 
     e.target.classList.toggle('IsAnimating');
-
-    const li = e.target.closest('li');
-
-    //const idExercise = li.getAttribute('data-id');
 
     try {
       const res = await fetch(
@@ -97,8 +87,6 @@ const ExerciseDetail = () => {
       } else {
         setUpdate(!update);
         console.log('likes');
-        console.log(exercise.likes);
-        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -112,10 +100,6 @@ const ExerciseDetail = () => {
     setError(null);
 
     // e.target.classList.toggle('IsAnimating');
-
-    const li = e.target.closest('li');
-
-    //const idExercise = li.getAttribute('data-id');
 
     try {
       const res = await fetch(
@@ -134,8 +118,6 @@ const ExerciseDetail = () => {
         setError(body.message);
       } else {
         setUpdate(!update);
-        console.log('favoritos');
-        console.log(exercise);
       }
     } catch (err) {
       setError(err.message);
@@ -149,10 +131,6 @@ const ExerciseDetail = () => {
     setError(null);
 
     if (window.confirm('¿Deseas eliminar el ejercicio?')) {
-      //const li = e.target.closest('li');
-
-      //const idExercise = li.getAttribute('data-id');
-
       try {
         const res = await fetch(
           `http://localhost:4000/exercises/${idExercise}`,
@@ -236,6 +214,7 @@ const ExerciseDetail = () => {
           </footer>
         </li>
       </ul>
+      {console.log(exercise)}
     </main>
   );
 };
