@@ -3,19 +3,16 @@ import { useToken } from '../../TokenContext';
 import { Link } from 'react-router-dom';
 import { useRole } from '../../RoleContext';
 
-import './ExerciseSearch.css';
+import './ExerciseFavourites.css';
 
-const ExerciseSearch = () => {
+const ExerciseFavourites = () => {
   const [token] = useToken();
-  const [userRole, setUserRole] = useRole();
-  const [typology, setTypology] = useState('');
-  const [muscular, setMuscular] = useState('');
   const [loading, setLoading] = useState(false);
   const [exercises, setExercises] = useState(null);
-  const [update, setUpdate] = useState(false);
   const [error, setError] = useState(null);
+  const [userRole, setUserRole] = useRole();
 
-  const getExercises = async () => {
+  const getFavExercises = async () => {
     setLoading(true);
 
     // Vaciamos el error.
@@ -58,55 +55,15 @@ const ExerciseSearch = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    getExercises();
-  };
-
   // Mediante "useEffect" hacemos que la primera vez que se monta el componente se
   // cargue de forma automática la lista de exercises.
   useEffect(() => {
-    getExercises();
+    getFavExercises();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [update]);
+  }, []);
 
   return (
-    <main className='ExerciseSearch'>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <div>
-            <label htmlFor='typology'>Tipología</label>
-            <select
-              name='typology'
-              onChange={(e) => setTypology(e.target.value)}
-            >
-              <option value='' defaultValue></option>
-              <option value='aerobico'>Aeróbico</option>
-              <option value='anaerobico'>Anaeróbico</option>
-              <option value='flexibilidad'>Flexibilidad</option>
-              <option value='resistencia'>Resistencia</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor='muscular'>Grupo muscular</label>
-            <select
-              name='muscular'
-              onChange={(e) => setMuscular(e.target.value)}
-            >
-              <option value='' defaultValue></option>
-              <option value='brazos'>Brazos</option>
-              <option value='piernas'>Piernas</option>
-              <option value='espalda'>Espalda</option>
-              <option value='pecho'>Pecho</option>
-            </select>
-          </div>
-        </div>
-
-        <button disabled={loading}>Buscar</button>
-      </form>
-
+    <main className='ExerciseFavourites'>
       {error && <p className='Error'>{error}</p>}
 
       {exercises && (
@@ -139,4 +96,4 @@ const ExerciseSearch = () => {
   );
 };
 
-export default ExerciseSearch;
+export default ExerciseFavourites;

@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useRole } from '../../RoleContext';
 import { useUser } from '../../UserContext';
+import { useIdUser } from '../../IdUserContext';
 
 import './Login.css';
 
@@ -10,6 +11,7 @@ const Login = () => {
   const [token, setToken] = useToken();
   const [userRole, setUserRole] = useRole();
   const [user, setUser] = useUser();
+  const [idUser, setIdUser] = useIdUser();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -44,9 +46,11 @@ const Login = () => {
       } else {
         setToken(body.data.token);
         setUserRole(body.data.role);
+        setIdUser(body.data.idUser);
         //console.log(name);
         setUser(name);
         console.log(user);
+        console.log(idUser);
       }
     } catch (err) {
       console.error(err);
