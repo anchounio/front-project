@@ -53,6 +53,16 @@ ul.ExerciseList > li > footer > div.Favourites {
   margin-bottom: 1rem;
 }
 
+ul.ExerciseList > li > footer > div.NotAddedFavourite {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+ul.ExerciseList > li > footer > div.AddedFavourite > button {
+  background-color: var(--blue-color);
+}
+
 ul.ExerciseList > li > footer > div.Changing {
   display: flex;
   justify-content: center;
@@ -143,4 +153,60 @@ ul.ExerciseList > li > footer > div.Changing > a.Update {
 }
 ul.ExerciseList > li > footer > div.Changing > a.Update:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 600px) {
+  ul.ExerciseList > li > footer > div > p {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  main.ExerciseDetail > ul.ExerciseList {
+    width: 700px;
+  }
+
+  main.ExerciseDetail > ul.ExerciseList > li {
+    width: 650px;
+  }
+
+  ul.ExerciseList > li > footer > div > p {
+    font-size: 1.5rem;
+  }
+
+  ul.ExerciseList > li > footer > div.Favourites {
+    margin-bottom: 2rem;
+  }
+
+  ul.ExerciseList > li > footer > div.NotAddedFavourite {
+    margin-bottom: 2rem;
+  }
+
+  ul.ExerciseList > li > footer > div.Favourites > button,
+  ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
+  ul.ExerciseList > li > footer > div.AddedFavourite > button,
+  ul.ExerciseList > li > footer > div.Changing > button,
+  ul.ExerciseList > li > footer > div.Changing > a.Update {
+    width: 150px;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  ul.ExerciseList > li > div.List > p {
+    font-size: 2.5rem;
+  }
+
+  ul.ExerciseList > li > footer > div > p {
+    font-size: 2rem;
+  }
+
+  ul.ExerciseList > li > footer > div.Favourites > button,
+  ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
+  ul.ExerciseList > li > footer > div.AddedFavourite > button,
+  ul.ExerciseList > li > footer > div.Changing > button,
+  ul.ExerciseList > li > footer > div.Changing > a.Update {
+    width: 175px;
+    font-size: 1.7rem;
+  }
 }
