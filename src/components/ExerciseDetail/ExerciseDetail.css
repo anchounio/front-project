@@ -53,3 +53,49 @@ ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
   animation: heart-burst 0.8s steps(28) 1;
   animation-fill-mode: forwards;
 }
+
+ul.ExerciseList > li > footer > div > div.heart.NotLiked {
+  background-image: url('/public/heart_animation.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+}
+
+ul.ExerciseList > li > footer > div > div.heart.Liked {
+  animation: heart-burst 0s steps(28) 1;
+  animation-fill-mode: forwards;
+}
+
+ul.ExerciseList > li > footer > div > div.heart.IsAnimatingFor {
+  animation: heart-burst 0.8s steps(28) 1;
+  animation-fill-mode: forwards;
+  transform-origin: 0 100%;
+}
+
+ul.ExerciseList > li > footer > div > div.heart.IsAnimatingBack {
+  animation: heart-repaired 0.8s steps(28) 1;
+  animation-fill-mode: backwards;
+  transform-origin: 100% 100%;
+  background-image: url('/public/heart_animation.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+}
+
+@keyframes heart-burst {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+
+@keyframes heart-repaired {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
+}
