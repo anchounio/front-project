@@ -81,7 +81,6 @@ ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
   animation-fill-mode: forwards;
 }
 
-
 ul.ExerciseList > li > footer > div > div.heart.NotLiked {
   background-image: url('/public/heart_animation.png');
   background-position: left;
@@ -126,6 +125,7 @@ ul.ExerciseList > li > footer > div > div.heart.IsAnimatingBack {
   to {
     background-position: left;
   }
+}
 
 ul.ExerciseList > li > footer > div.Changing > a.Update {
   display: flex;
