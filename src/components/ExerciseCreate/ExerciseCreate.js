@@ -69,6 +69,7 @@ const ExerciseCreate = () => {
             setSelectedFile(e.target.files[0]);
           }}
         />
+        <label htmlFor='name'>Nombre</label>
         <input
           type='text'
           required
@@ -77,6 +78,7 @@ const ExerciseCreate = () => {
           }}
         />
 
+        <label htmlFor='typology'>Tipología</label>
         <select
           name='typology'
           required
@@ -89,6 +91,7 @@ const ExerciseCreate = () => {
           <option value='resistencia'>resistencia</option>
         </select>
 
+        <label htmlFor='muscularGroup'>Grupo muscular</label>
         <select
           name='muscularGroup'
           required
@@ -103,6 +106,7 @@ const ExerciseCreate = () => {
 
         <textarea
           value={description}
+          placeholder='Descripción del ejercicio...'
           required
           onChange={(e) => setDescription(e.target.value)}
         />

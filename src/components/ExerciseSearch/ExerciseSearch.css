@@ -52,6 +52,7 @@ ul.ExerciseList > li > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1em 1em 0 1em;
 }
 
 ul.ExerciseList > li > div > footer {

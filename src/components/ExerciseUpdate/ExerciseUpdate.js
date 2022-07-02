@@ -120,6 +120,7 @@ const ExerciseUpdate = () => {
           }}
         />
 
+        <label htmlFor='name'>Nombre</label>
         <input
           type='text'
           required
@@ -129,6 +130,7 @@ const ExerciseUpdate = () => {
           }}
         />
 
+        <label htmlFor='typology'>Tipología</label>
         {exercise.typology === 'aerobico' && (
           <select
             name='typology'
@@ -197,6 +199,7 @@ const ExerciseUpdate = () => {
           </select>
         )}
 
+        <label htmlFor='muscularGroup'>Grupo muscular</label>
         {exercise.muscularGroup === 'brazos' && (
           <select
             name='muscularGroup'
