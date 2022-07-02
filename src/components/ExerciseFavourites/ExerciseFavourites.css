@@ -56,22 +56,6 @@ img {
 }
 
 @media only screen and (min-width: 600px) {
-  main.ExerciseFavourites > form {
-    width: 512px;
-  }
-
-  main.ExerciseFavourites > form > div {
-    gap: 7rem;
-  }
-
-  main.ExerciseFavourites > form > div > div > label {
-    font-size: 1.3rem;
-  }
-
-  main.ExerciseFavourites > form > div > div > select {
-    font-size: 1.3rem;
-  }
-
   ul.ExerciseList > li > div > p {
     font-size: 1.3rem;
   }

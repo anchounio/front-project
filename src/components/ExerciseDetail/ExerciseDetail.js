@@ -18,10 +18,6 @@ const ExerciseDetail = () => {
   const showExercise = async () => {
     setLoading(true);
 
-    console.log(userRole);
-    console.log('la id de este ejercicio es');
-    console.log(id);
-
     // Vaciamos el error.
     setError(null);
 
@@ -38,8 +34,6 @@ const ExerciseDetail = () => {
       const res = await fetch(`http://localhost:4000/exercises/${id}`, params);
 
       const body = await res.json();
-
-      // console.log(body);
 
       if (body.status === 'error') {
         setExercise(null);
@@ -98,7 +92,6 @@ const ExerciseDetail = () => {
         setError(body.message);
       } else {
         setUpdate(!update);
-        console.log('likes');
       }
     } catch (err) {
       setError(err.message);
@@ -232,7 +225,6 @@ const ExerciseDetail = () => {
           </footer>
         </li>
       </ul>
-      {console.log(exercise)}
     </main>
   );
 };
