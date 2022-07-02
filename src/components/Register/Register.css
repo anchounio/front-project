@@ -3,6 +3,7 @@ main.Register {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 
 main.Register > form {
@@ -48,4 +49,39 @@ button {
 
 button:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 760px) {
+  main.Register > p.Error {
+    font-size: 1.6rem;
+  }
+
+  main.Register > form {
+    font-size: 1.5rem;
+  }
+
+  main.Register > form > input {
+    font-size: 1.5rem;
+  }
+
+  main.Register > form > button {
+    font-size: 1.5rem;
+    width: 180px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main.Register > form {
+    font-size: 1.8rem;
+    gap: 1rem;
+  }
+
+  main.Register > form > input {
+    font-size: 1.8rem;
+  }
+
+  main.Register > form > button {
+    font-size: 1.8rem;
+    width: 220px;
+  }
 }

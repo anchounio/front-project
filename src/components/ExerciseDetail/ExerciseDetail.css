@@ -47,12 +47,6 @@ ul.ExerciseList > li > footer > div > p {
   margin: 0 0 1rem 1rem;
 }
 
-ul.ExerciseList > li > footer > div.Favourites {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
 ul.ExerciseList > li > footer > div.NotAddedFavourite {
   display: flex;
   justify-content: center;
@@ -162,6 +156,10 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
 }
 
 @media only screen and (min-width: 760px) {
+  main.ExerciseDetail > p.Error {
+    font-size: 1.6rem;
+  }
+
   main.ExerciseDetail > ul.ExerciseList {
     width: 700px;
   }
@@ -174,15 +172,10 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 1.5rem;
   }
 
-  ul.ExerciseList > li > footer > div.Favourites {
-    margin-bottom: 2rem;
-  }
-
   ul.ExerciseList > li > footer > div.NotAddedFavourite {
     margin-bottom: 2rem;
   }
 
-  ul.ExerciseList > li > footer > div.Favourites > button,
   ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
@@ -201,7 +194,6 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 2rem;
   }
 
-  ul.ExerciseList > li > footer > div.Favourites > button,
   ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
