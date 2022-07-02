@@ -3,6 +3,7 @@ main.ExerciseUpdate {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 
 main.ExerciseUpdate > form {
@@ -67,4 +68,40 @@ main.ExerciseUpdate > form > button:active {
 main.ExerciseUpdate > p.Error {
   margin-top: 1.5rem;
   color: var(--error-colour);
+}
+
+@media only screen and (min-width: 600px) {
+  main.ExerciseUpdate > form {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  main.ExerciseUpdate > p.Error {
+    font-size: 1.6rem;
+  }
+
+  main.ExerciseUpdate > form {
+    width: 700px;
+  }
+
+  main.ExerciseUpdate > form > label {
+    font-size: 1.6rem;
+  }
+
+  main.ExerciseUpdate > form > input,
+  main.ExerciseUpdate > form > select,
+  main.ExerciseUpdate > form > textarea {
+    font-size: 1.6rem;
+    width: 400px;
+  }
+
+  main.ExerciseUpdate > form > input:first-child {
+    width: 600px;
+  }
+
+  main.ExerciseUpdate > form > button {
+    width: 150px;
+    font-size: 1.4rem;
+  }
 }

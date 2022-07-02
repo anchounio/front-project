@@ -3,6 +3,7 @@ main.ExerciseCreate {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 
 main.ExerciseCreate > form {
@@ -24,7 +25,7 @@ main.ExerciseCreate > form > select {
 }
 
 main.ExerciseCreate > form > textarea {
-  max-width: 200px;
+  width: 175px;
   height: 100px;
   margin-bottom: 1rem;
   padding: 0.6rem;
@@ -57,4 +58,40 @@ main.ExerciseCreate > form > button:active {
 main.ExerciseCreate > p.Error {
   margin-top: 1.5rem;
   color: var(--error-colour);
+}
+
+@media only screen and (min-width: 600px) {
+  main.ExerciseCreate > form {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  main.ExerciseCreate > p.Error {
+    font-size: 1.6rem;
+  }
+
+  main.ExerciseCreate > form {
+    width: 700px;
+  }
+
+  main.ExerciseCreate > form > label {
+    font-size: 1.6rem;
+  }
+
+  main.ExerciseCreate > form > input,
+  main.ExerciseCreate > form > select,
+  main.ExerciseCreate > form > textarea {
+    font-size: 1.6rem;
+    width: 400px;
+  }
+
+  main.ExerciseCreate > form > input:first-child {
+    width: 600px;
+  }
+
+  main.ExerciseCreate > form > button {
+    width: 150px;
+    font-size: 1.4rem;
+  }
 }

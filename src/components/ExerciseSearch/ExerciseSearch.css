@@ -108,6 +108,10 @@ img {
 }
 
 @media only screen and (min-width: 760px) {
+  main.ExerciseSearch > p.Error {
+    font-size: 1.8rem;
+  }
+
   main.ExerciseSearch > form {
     min-width: 700px;
   }
