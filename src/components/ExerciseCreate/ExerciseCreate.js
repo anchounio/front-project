@@ -73,6 +73,7 @@ const ExerciseCreate = () => {
         <input
           type='text'
           required
+          maxLength={20}
           onChange={(e) => {
             setName(e.target.value);
           }}

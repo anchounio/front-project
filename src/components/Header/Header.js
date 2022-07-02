@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useUser } from '../../UserContext';
 import { useRole } from '../../RoleContext';
+import { useIdUser } from '../../IdUserContext';
 
 import './Header.css';
 
@@ -9,6 +10,9 @@ const Header = () => {
   const [user] = useUser();
   const [token, setToken] = useToken();
   const [userRole] = useRole();
+  const [idUser, setIdUser] = useIdUser();
+
+  console.log(idUser);
 
   return (
     <header>
@@ -34,6 +38,15 @@ const Header = () => {
           <div className='Button'>
             <NavLink to='/new'>Nuevo ejercicio</NavLink>
           </div>
+        )}
+        {token && (
+          <div className='Button'>
+            <NavLink to={`/favourites/${idUser}`}>Favoritos</NavLink>
+          </div>
+
+          // <Link to={`/update/${idExercise}`} className='Update'>
+          // Actualizar
+          // </Link>
         )}
         {token && (
           <div className='Button' onClick={() => setToken(null)}>

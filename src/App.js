@@ -5,6 +5,7 @@ import ExerciseSearch from './components/ExerciseSearch/ExerciseSearch';
 import ExerciseCreate from './components/ExerciseCreate/ExerciseCreate';
 import ExerciseDetail from './components/ExerciseDetail/ExerciseDetail';
 import ExerciseUpdate from './components/ExerciseUpdate/ExerciseUpdate';
+import ExerciseFavourites from './components/ExerciseFavourites/ExerciseFavourites';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Footer from './components/Footer/Footer';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/new' element={<ExerciseCreate />} />
         <Route path='*' element={<ExerciseSearch />} />
+        <Route path='/favourites/:id' element={<ExerciseFavourites />} />
       </Routes>
       <Footer />
     </div>
