@@ -13,10 +13,16 @@ div.App > header {
   gap: 1rem;
 }
 
-.Cabecera {
+h1.Cabecera {
   color: white;
   text-shadow: 2px 2px 4px black;
   text-align: center;
+  font-family: 'Acetone';
+  text-decoration: none;
+}
+
+.Gym a:link {
+  text-decoration: none;
 }
 
 .Logo {
