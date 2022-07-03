@@ -36,6 +36,10 @@ ul.ExerciseList > li > div.List > p {
   padding: 1rem;
 }
 
+ul.ExerciseList > li > div.List > p {
+  font-size: 1.5rem;
+}
+
 ul.ExerciseList > li > div.List > p > span {
   font-weight: bold;
 }
@@ -59,22 +63,30 @@ ul.ExerciseList > li > footer > div.LikesFav > div.Likes {
 
 ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  width: 150px;
+  font-size: 1.3rem;
 }
 
 ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  width: 150px;
+  font-size: 1.3rem;
 }
 ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button {
   background-color: var(--blue-color);
   color: white;
+  width: 150px;
+  font-size: 1.3rem;
 }
 
 ul.ExerciseList > li > footer > div.Changing {
@@ -84,6 +96,11 @@ ul.ExerciseList > li > footer > div.Changing {
   gap: 1rem;
   border-top: 1px solid black;
   padding: 1rem;
+}
+
+ul.ExerciseList > li > footer > div.Changing > button {
+  width: 150px;
+  font-size: 1.5rem;
 }
 
 ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart {
@@ -170,7 +187,8 @@ ul.ExerciseList > li > footer > div.Changing > a.Update {
   display: flex;
   justify-content: center;
   padding: 0.5rem 0;
-  width: 120px;
+  width: 150px;
+  font-size: 1.5rem;
   font-weight: bold;
   background-color: white;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
@@ -203,16 +221,24 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     width: 650px;
   }
 
+  ul.ExerciseList > li > div.List > p {
+    font-size: 2rem;
+  }
+
   ul.ExerciseList > li > footer > div > p {
     font-size: 1.5rem;
+  }
+
+  ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
+    font-size: 1.4rem;
   }
 
   ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
-    width: 150px;
-    font-size: 1.3rem;
+    width: 170px;
+    font-size: 1.5rem;
   }
 }
 
@@ -221,15 +247,15 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 2.5rem;
   }
 
-  ul.ExerciseList > li > footer > div > p {
-    font-size: 2rem;
+  ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
+    font-size: 1.6rem;
   }
 
-  ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button,
+  ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
-    width: 175px;
-    font-size: 1.7rem;
+    width: 200px;
+    font-size: 1.9rem;
   }
 }
