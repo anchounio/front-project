@@ -16,6 +16,7 @@ main.ExerciseCreate > form {
 
 main.ExerciseCreate > form > label {
   font-weight: bold;
+  margin-bottom: 0.3rem;
 }
 
 main.ExerciseCreate > form > select {

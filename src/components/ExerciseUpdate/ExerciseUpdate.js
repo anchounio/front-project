@@ -107,17 +107,19 @@ const ExerciseUpdate = () => {
   return (
     <main className='ExerciseUpdate'>
       <form onSubmit={handleSubmit}>
+        <label htmlFor='image'>Añade una imagen (opcional)</label>
         <input
           type='file'
+          name='image'
           // defaultValue={exercise.photo}
           onChange={(e) => {
             setSelectedFile(e.target.files[0]);
           }}
         />
-
         <label htmlFor='name'>Nombre</label>
         <input
           type='text'
+          name='name'
           maxLength={20}
           required
           defaultValue={exercise.name}
@@ -125,7 +127,6 @@ const ExerciseUpdate = () => {
             setName(e.target.value);
           }}
         />
-
         <label htmlFor='typology'>Tipología</label>
         {exercise.typology === 'aerobico' && (
           <select
@@ -143,7 +144,6 @@ const ExerciseUpdate = () => {
             <option value='resistencia'>resistencia</option>
           </select>
         )}
-
         {exercise.typology === 'anaerobico' && (
           <select
             name='typology'
@@ -160,7 +160,6 @@ const ExerciseUpdate = () => {
             <option value='resistencia'>resistencia</option>
           </select>
         )}
-
         {exercise.typology === 'flexibilidad' && (
           <select
             name='typology'
@@ -177,7 +176,6 @@ const ExerciseUpdate = () => {
             <option value='resistencia'>resistencia</option>
           </select>
         )}
-
         {exercise.typology === 'resistencia' && (
           <select
             name='typology'
@@ -194,7 +192,6 @@ const ExerciseUpdate = () => {
             </option>
           </select>
         )}
-
         <label htmlFor='muscularGroup'>Grupo muscular</label>
         {exercise.muscularGroup === 'brazos' && (
           <select
@@ -212,7 +209,6 @@ const ExerciseUpdate = () => {
             <option value='pecho'>Pecho</option>
           </select>
         )}
-
         {exercise.muscularGroup === 'piernas' && (
           <select
             name='muscularGroup'
@@ -229,7 +225,6 @@ const ExerciseUpdate = () => {
             <option value='pecho'>Pecho</option>
           </select>
         )}
-
         {exercise.muscularGroup === 'espalda' && (
           <select
             name='muscularGroup'
@@ -246,7 +241,6 @@ const ExerciseUpdate = () => {
             <option value='pecho'>Pecho</option>
           </select>
         )}
-
         {exercise.muscularGroup === 'pecho' && (
           <select
             name='muscularGroup'
@@ -263,9 +257,10 @@ const ExerciseUpdate = () => {
             </option>
           </select>
         )}
-
+        <label htmlFor='descripcion'>Descripción</label>
         <textarea
           // value={description}
+          name='descripcion'
           required
           defaultValue={exercise.description}
           onChange={(e) => setDescription(e.target.value)}

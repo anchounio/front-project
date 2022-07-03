@@ -171,6 +171,13 @@ const ExerciseDetail = () => {
       <ul className='ExerciseList'>
         <li key={exercise.id} data-id={exercise.id}>
           <div className='List'>
+            {exercise.photo && (
+              <img
+                className='ImageDetails'
+                src={`http://localhost:4000/${exercise.photo}`}
+                alt='Imagen del ejercicios'
+              />
+            )}
             <p>
               <span>Nombre:</span> {exercise.name}
             </p>
@@ -183,18 +190,6 @@ const ExerciseDetail = () => {
             <p>
               <span>Grupo muscular:</span>
               {exercise.muscularGroup}
-            </p>
-            {exercise.photo && (
-              <img
-                src={`http://localhost:4000/${exercise.photo}`}
-                alt='Imagen adjunta'
-              />
-            )}
-            <p>
-              <span>Likes:</span> {exercise.likes}
-            </p>
-            <p>
-              <span>Favorito:</span> {exercise.favourites}
             </p>
           </div>
           <footer>
@@ -210,7 +205,11 @@ const ExerciseDetail = () => {
                 exercise.favedByMe ? 'AddedFavourite' : 'NotAddedFavourite'
               }
             >
-              <button onClick={token && handleFavourite}>Favorito</button>
+              <button onClick={token && handleFavourite}>
+                {exercise.favedByMe
+                  ? 'Añadido a Favoritos'
+                  : 'Añadir a Favoritos'}
+              </button>
             </div>
             <div className='Changing'>
               {token && userRole === 'admin' && (
@@ -218,7 +217,7 @@ const ExerciseDetail = () => {
               )}
               {token && userRole === 'admin' && (
                 <Link to={`/update/${idExercise}`} className='Update'>
-                  Actualizar
+                  Modificar
                 </Link>
               )}
             </div>

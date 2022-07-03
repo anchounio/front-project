@@ -63,7 +63,9 @@ const ExerciseCreate = () => {
   return (
     <main className='ExerciseCreate'>
       <form onSubmit={handleSubmit}>
+        <label htmlFor='imagen'>Añade una imagen (opcional)</label>
         <input
+          name='imagen'
           type='file'
           onChange={(e) => {
             setSelectedFile(e.target.files[0]);
@@ -71,6 +73,7 @@ const ExerciseCreate = () => {
         />
         <label htmlFor='name'>Nombre</label>
         <input
+          name='name'
           type='text'
           required
           maxLength={20}
@@ -105,9 +108,11 @@ const ExerciseCreate = () => {
           <option value='pecho'>Pecho</option>
         </select>
 
+        <label htmlFor='descripcion'>Descripción</label>
         <textarea
+          name='descripcion'
           value={description}
-          placeholder='Descripción del ejercicio...'
+          maxLength={280}
           required
           onChange={(e) => setDescription(e.target.value)}
         />
