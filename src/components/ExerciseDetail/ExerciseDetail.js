@@ -193,23 +193,27 @@ const ExerciseDetail = () => {
             </p>
           </div>
           <footer>
-            <div>
+            <div className='LikesFav'>
+              <div className='Likes'>
+                <div
+                  className={`heart ${
+                    exercise.likedByMe ? 'Liked' : 'NotLiked'
+                  }`}
+                  onClick={token && handleLike}
+                ></div>
+                <p>{exercise.totalLikes} likes</p>
+              </div>
               <div
-                className={`heart ${exercise.likedByMe ? 'Liked' : 'NotLiked'}`}
-                onClick={token && handleLike}
-              ></div>
-              <p>{exercise.totalLikes} likes</p>
-            </div>
-            <div
-              className={
-                exercise.favedByMe ? 'AddedFavourite' : 'NotAddedFavourite'
-              }
-            >
-              <button onClick={token && handleFavourite}>
-                {exercise.favedByMe
-                  ? 'Añadido a Favoritos'
-                  : 'Añadir a Favoritos'}
-              </button>
+                className={
+                  exercise.favedByMe ? 'AddedFavourite' : 'NotAddedFavourite'
+                }
+              >
+                <button onClick={token && handleFavourite}>
+                  {exercise.favedByMe
+                    ? 'Añadido a Favoritos'
+                    : 'Añadir a Favoritos'}
+                </button>
+              </div>
             </div>
             <div className='Changing'>
               {token && userRole === 'admin' && (

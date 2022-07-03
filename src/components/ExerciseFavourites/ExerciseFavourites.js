@@ -61,7 +61,7 @@ const ExerciseFavourites = () => {
       {error && <p className='Error'>{error}</p>}
 
       {exercises && (
-        <ul className='ExerciseList'>
+        <ul className='ExerciseFavList'>
           {exercises.map((exercise) => {
             return (
               <li key={exercise.id} data-id={exercise.id}>

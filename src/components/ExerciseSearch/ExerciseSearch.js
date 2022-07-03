@@ -67,6 +67,7 @@ const ExerciseSearch = () => {
 
   return (
     <main className='ExerciseSearch'>
+      <h2>Filtrar por:</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <div>
@@ -104,7 +105,7 @@ const ExerciseSearch = () => {
       {error && <p className='Error'>{error}</p>}
 
       {exercises && (
-        <ul className='ExerciseList'>
+        <ul className='ExerciseSearchList'>
           {exercises.map((exercise) => {
             return (
               <li key={exercise.id} data-id={exercise.id}>
