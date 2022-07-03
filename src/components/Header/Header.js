@@ -16,7 +16,7 @@ const Header = () => {
     <header>
       {token && <p className='Bienvenido'>Sesión iniciada como {user}</p>}
       <div id='Gym'>
-        <h1 id='Cabecera'>Gimnasio Muscle Card</h1>
+        <h1 id='Cabecera'>MuscleCard Gym</h1>
         <NavLink to='/'>
           <img src='/logo.jpg' alt='logo' id='Logo' />
         </NavLink>

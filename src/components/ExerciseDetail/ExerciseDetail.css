@@ -53,6 +53,11 @@ ul.ExerciseList > li > footer > div.NotAddedFavourite {
   margin-bottom: 1rem;
 }
 
+ul.ExerciseList > li > footer > div.AddedFavourite {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 ul.ExerciseList > li > footer > div.AddedFavourite > button {
   background-color: var(--blue-color);
 }
