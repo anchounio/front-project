@@ -225,6 +225,7 @@ const ExerciseDetail = () => {
           </footer>
         </li>
       </ul>
+      {console.log(exercise)}
     </main>
   );
 };
