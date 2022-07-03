@@ -42,6 +42,11 @@ ul.ExerciseFavList > li > div > footer:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
+ul.ExerciseFavList > li > div > footer:hover {
+  background-color: var(--dark-blue-green-color);
+  transition: 0.2s;
+}
+
 ul.ExerciseFavList > li > div > footer > a {
   text-decoration: none;
   color: black;
@@ -66,30 +71,10 @@ img {
     font-size: 1.8rem;
   }
 
-  main.ExerciseFavourites > form {
-    min-width: 700px;
-  }
-
-  main.ExerciseFavourites > form > div {
-    gap: 10rem;
-  }
-
-  main.ExerciseFavourites > form > div > div > label {
-    font-size: 1.8rem;
-  }
-
-  main.ExerciseFavourites > form > div > div > select {
-    font-size: 1.8rem;
-  }
-
-  main.ExerciseFavourites > form > button {
-    font-size: 1.6rem;
-    width: 180px;
-  }
-
   ul.ExerciseFavList {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
   }

@@ -57,6 +57,11 @@ div.Buttons > div.Button {
   border-radius: 20%;
 }
 
+div.Buttons > div.Button:hover {
+  background-color: var(--pale-blue-green-colour);
+  transition: 0.2s;
+}
+
 div.Buttons > div.Button:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
