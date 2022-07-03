@@ -177,10 +177,6 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 1.5rem;
   }
 
-  ul.ExerciseList > li > footer > div.NotAddedFavourite {
-    margin-bottom: 2rem;
-  }
-
   ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
