@@ -83,10 +83,34 @@ ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite {
   font-size: 1.3rem;
 }
 ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button {
-  background-color: var(--blue-color);
+  background-color: var(--dark-blue-green-color);
   color: white;
   width: 150px;
   font-size: 1.3rem;
+}
+
+ul.ExerciseList
+  > li
+  > footer
+  > div.LikesFav
+  > div.AddedFavourite
+  > button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue-green-color);
+  color: white;
+  transition: 0.2s;
+}
+
+ul.ExerciseList
+  > li
+  > footer
+  > div.LikesFav
+  > div.NotAddedFavourite
+  > button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue-green-color);
+  color: white;
+  transition: 0.2s;
 }
 
 ul.ExerciseList > li > footer > div.Changing {
@@ -101,6 +125,13 @@ ul.ExerciseList > li > footer > div.Changing {
 ul.ExerciseList > li > footer > div.Changing > button {
   width: 150px;
   font-size: 1.5rem;
+}
+
+ul.ExerciseList > li > footer > div.Changing > button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue-green-color);
+  color: white;
+  transition: 0.2s;
 }
 
 ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart {
@@ -200,6 +231,13 @@ ul.ExerciseList > li > footer > div.Changing > a.Update {
 }
 ul.ExerciseList > li > footer > div.Changing > a.Update:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+ul.ExerciseList > li > footer > div.Changing > a.Update:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue-green-color);
+  color: white;
+  transition: 0.2s;
 }
 
 @media only screen and (min-width: 600px) {

@@ -5,8 +5,11 @@
 }
 
 :root {
-  --blue-color: rgba(0, 75, 75, 0.7);
   --blue-green-colour: rgba(0, 139, 139, 0.7);
+  --pale-blue-green-colour: rgba(221, 251, 251, 0.7);
+  --light-blue-green-color: rgba(72, 142, 142, 0.7);
+  --dark-blue-green-color: rgba(0, 75, 75, 0.7);
+
   --error-colour: rgb(187, 36, 36);
 }
 

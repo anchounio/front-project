@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
 import { useUser } from '../../UserContext';
 import { useRole } from '../../RoleContext';
@@ -11,6 +11,13 @@ const Header = () => {
   const [token, setToken] = useToken();
   const [userRole] = useRole();
   const [idUser, setIdUser] = useIdUser();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    setToken(null);
+    navigate('/');
+    window.location.reload();
+  };
 
   return (
     <header>
@@ -49,7 +56,7 @@ const Header = () => {
           // </Link>
         )}
         {token && (
-          <div className='Button' onClick={() => setToken(null)}>
+          <div className='Button' onClick={logoutHandler}>
             <p>Salir de sesión</p>
           </div>
         )}

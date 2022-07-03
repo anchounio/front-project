@@ -40,6 +40,13 @@ main.ExerciseSearch > form > div > div > select {
   text-align: center;
 }
 
+main.ExerciseSearch > form > button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: var(--dark-blue-green-color);
+  transition: 0.2s;
+}
+
 main.ExerciseSearch > p.Error {
   margin-top: 1.5rem;
 }
@@ -82,6 +89,11 @@ ul.ExerciseSearchList > li > div > footer {
 
 ul.ExerciseSearchList > li > div > footer:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
+}
+
+ul.ExerciseSearchList > li > div > footer:hover {
+  background-color: var(--dark-blue-green-color);
+  transition: 0.2s;
 }
 
 ul.ExerciseSearchList > li > div > footer > a {
