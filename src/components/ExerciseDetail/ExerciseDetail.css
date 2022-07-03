@@ -45,22 +45,34 @@ ul.ExerciseList > li > div.List > img.ImageDetails {
   max-height: 100%;
 }
 
-ul.ExerciseList > li > footer > div > p {
-  margin: 0 0 1rem 1rem;
+ul.ExerciseList > li > footer > div.LikesFav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
 
-ul.ExerciseList > li > footer > div.NotAddedFavourite {
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes {
+  display: flex;
+  flex-direction: column;
+}
+
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
+  text-align: center;
+}
+
+ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-ul.ExerciseList > li > footer > div.AddedFavourite {
+ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
-ul.ExerciseList > li > footer > div.AddedFavourite > button {
+ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button {
   background-color: var(--blue-color);
   color: white;
 }
@@ -74,7 +86,7 @@ ul.ExerciseList > li > footer > div.Changing {
   padding: 1rem;
 }
 
-ul.ExerciseList > li > footer > div > div.heart {
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart {
   cursor: pointer;
   height: 7.3rem;
   width: 7.3rem;
@@ -84,34 +96,49 @@ ul.ExerciseList > li > footer > div > div.heart {
   background-size: 2900%;
 }
 
-ul.ExerciseList > li > footer > div > div.heart:hover {
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart:hover {
   background-position: right;
 }
 
-ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
+ul.ExerciseList
+  > li
+  > footer
+  > div.LikesFav
+  > div.Likes
+  > div.heart.IsAnimating {
   animation: heart-burst 0.8s steps(28) 1;
   animation-fill-mode: forwards;
 }
 
-ul.ExerciseList > li > footer > div > div.heart.NotLiked {
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart.NotLiked {
   background-image: url('/public/heart_animation.png');
   background-position: left;
   background-repeat: no-repeat;
   background-size: 2900%;
 }
 
-ul.ExerciseList > li > footer > div > div.heart.Liked {
+ul.ExerciseList > li > footer > div.LikesFav > div.Likes > div.heart.Liked {
   animation: heart-burst 0s steps(28) 1;
   animation-fill-mode: forwards;
 }
 
-ul.ExerciseList > li > footer > div > div.heart.IsAnimatingFor {
+ul.ExerciseList
+  > li
+  > footer
+  > div.LikesFav
+  > div.Likes
+  > div.heart.IsAnimatingFor {
   animation: heart-burst 0.8s steps(28) 1;
   animation-fill-mode: forwards;
   transform-origin: 0 100%;
 }
 
-ul.ExerciseList > li > footer > div > div.heart.IsAnimatingBack {
+ul.ExerciseList
+  > li
+  > footer
+  > div.LikesFav
+  > div.Likes
+  > div.heart.IsAnimatingBack {
   animation: heart-repaired 0.8s steps(28) 1;
   animation-fill-mode: backwards;
   transform-origin: 100% 100%;
@@ -180,8 +207,8 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 1.5rem;
   }
 
-  ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
-  ul.ExerciseList > li > footer > div.AddedFavourite > button,
+  ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
+  ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
     width: 150px;
@@ -198,8 +225,8 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:active {
     font-size: 2rem;
   }
 
-  ul.ExerciseList > li > footer > div.NotAddedFavourite > button,
-  ul.ExerciseList > li > footer > div.AddedFavourite > button,
+  ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
+  ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
     width: 175px;

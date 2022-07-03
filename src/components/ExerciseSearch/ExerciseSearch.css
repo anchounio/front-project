@@ -1,3 +1,8 @@
+main > h2 {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
 main.ExerciseSearch {
   display: flex;
   flex-direction: column;
@@ -39,7 +44,7 @@ main.ExerciseSearch > p.Error {
   margin-top: 1.5rem;
 }
 
-ul.ExerciseList {
+ul.ExerciseSearchList {
   margin-top: 2rem;
   list-style: none;
   display: flex;
@@ -48,14 +53,21 @@ ul.ExerciseList {
   max-width: 100%;
 }
 
-ul.ExerciseList > li > div {
+ul.ExerciseSearchList > li > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em 1em 0 1em;
 }
 
-ul.ExerciseList > li > div > footer {
+ul.ExerciseSearchList > li > div > p {
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  font-weight: bold;
+}
+
+ul.ExerciseSearchList > li > div > footer {
   display: flex;
   justify-content: center;
   padding: 0.5rem 0;
@@ -68,11 +80,11 @@ ul.ExerciseList > li > div > footer {
   margin: 1rem 0;
 }
 
-ul.ExerciseList > li > div > footer:active {
+ul.ExerciseSearchList > li > div > footer:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
-ul.ExerciseList > li > div > footer > a {
+ul.ExerciseSearchList > li > div > footer > a {
   text-decoration: none;
   color: black;
   align-self: center;
@@ -86,6 +98,10 @@ img {
 }
 
 @media only screen and (min-width: 600px) {
+  main > h2 {
+    font-size: 1.7rem;
+  }
+
   main.ExerciseSearch > form {
     width: 512px;
   }
@@ -102,12 +118,16 @@ img {
     font-size: 1.3rem;
   }
 
-  ul.ExerciseList > li > div > p {
+  ul.ExerciseSearchList > li > div > p {
     font-size: 1.3rem;
   }
 }
 
 @media only screen and (min-width: 760px) {
+  main > h2 {
+    font-size: 2.3rem;
+  }
+
   main.ExerciseSearch > p.Error {
     font-size: 1.8rem;
   }
@@ -133,21 +153,22 @@ img {
     width: 180px;
   }
 
-  ul.ExerciseList {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 100%;
-  }
-
-  ul.ExerciseList > li > div > p {
+  ul.ExerciseSearchList > li > div > p {
     font-size: 1.8rem;
   }
 
-  ul.ExerciseList > li > div > footer {
+  ul.ExerciseSearchList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  ul.ExerciseSearchList > li > div > footer {
     width: 120px;
   }
 
-  ul.ExerciseList > li > div > footer > a {
+  ul.ExerciseSearchList > li > div > footer > a {
     font-size: 1.5rem;
   }
 }
