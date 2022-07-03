@@ -134,10 +134,9 @@ img {
   }
 
   ul.ExerciseList {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: baseline;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
   }
 
   ul.ExerciseList > li > div > p {

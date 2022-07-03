@@ -16,6 +16,7 @@ ul.ExerciseList {
 
 ul.ExerciseList > li {
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  border: 5px solid black;
 }
 
 ul.ExerciseList > li:not(:first-child) {
@@ -39,8 +40,9 @@ ul.ExerciseList > li > div.List > p > span {
   font-weight: bold;
 }
 
-ul.ExerciseList > li > div.List > img {
-  width: 100%;
+ul.ExerciseList > li > div.List > img.ImageDetails {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 ul.ExerciseList > li > footer > div > p {
@@ -60,6 +62,7 @@ ul.ExerciseList > li > footer > div.AddedFavourite {
 }
 ul.ExerciseList > li > footer > div.AddedFavourite > button {
   background-color: var(--blue-color);
+  color: white;
 }
 
 ul.ExerciseList > li > footer > div.Changing {
@@ -73,8 +76,8 @@ ul.ExerciseList > li > footer > div.Changing {
 
 ul.ExerciseList > li > footer > div > div.heart {
   cursor: pointer;
-  height: 70px;
-  width: 70px;
+  height: 7.3rem;
+  width: 7.3rem;
   background-image: url('/public/heart_animation.png');
   background-position: left;
   background-repeat: no-repeat;

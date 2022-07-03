@@ -5,7 +5,7 @@ div.App > header {
   padding: 1rem;
 }
 
-#Gym {
+.Gym {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -13,20 +13,20 @@ div.App > header {
   gap: 1rem;
 }
 
-#Cabecera {
+.Cabecera {
   color: white;
   text-shadow: 2px 2px 4px black;
   text-align: center;
 }
 
-#Logo {
+.Logo {
   max-width: 80px;
   margin: 1rem 0;
   border-radius: 20%;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
-#Logo:active {
+.Logo:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
@@ -74,7 +74,7 @@ div.Buttons > div.Button > p {
 }
 
 @media only screen and (min-width: 600px) {
-  #Gym {
+  .Gym {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
@@ -86,11 +86,11 @@ div.Buttons > div.Button > p {
     font-size: 1.5rem;
   }
 
-  #Gym {
+  .Gym {
     font-size: 1.5rem;
   }
 
-  #Logo {
+  .Logo {
     min-width: 120px;
   }
 
@@ -109,12 +109,12 @@ div.Buttons > div.Button > p {
     font-size: 2rem;
   }
 
-  #Gym {
+  .Gym {
     font-size: 2rem;
   }
 
-  #Logo {
-    min-width: 150px;
+  .Logo {
+    min-width: 9.375rem;
   }
 
   .Buttons {
