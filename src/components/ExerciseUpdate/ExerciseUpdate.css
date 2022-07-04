@@ -19,7 +19,7 @@ main.ExerciseUpdate > form > label {
   margin-bottom: 0.3rem;
 }
 
-main.ExerciseUpdate > form > select {
+main.ExerciseUpdate > form > .selector {
   width: 175px;
   margin-bottom: 1rem;
   text-align: center;
@@ -98,7 +98,7 @@ main.ExerciseUpdate > p.Error {
   }
 
   main.ExerciseUpdate > form > input,
-  main.ExerciseUpdate > form > select,
+  main.ExerciseUpdate > form > .selector,
   main.ExerciseUpdate > form > textarea {
     font-size: 1.6rem;
     width: 400px;
