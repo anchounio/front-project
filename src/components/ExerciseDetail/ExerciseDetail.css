@@ -89,6 +89,12 @@ ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button {
   font-size: 1.3rem;
 }
 
+ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button {
+  background-color: white;
+  width: 150px;
+  font-size: 1.3rem;
+}
+
 ul.ExerciseList
   > li
   > footer
@@ -101,7 +107,7 @@ ul.ExerciseList
   transition: 0.2s;
 }
 
-ul.ExerciseList
+/* ul.ExerciseList
   > li
   > footer
   > div.LikesFav
@@ -111,7 +117,7 @@ ul.ExerciseList
   background-color: var(--dark-blue-green-color);
   color: white;
   transition: 0.2s;
-}
+} */
 
 ul.ExerciseList > li > footer > div.Changing {
   display: flex;
