@@ -186,10 +186,10 @@ const ExerciseUpdate = () => {
 
         <label htmlFor='descripcion'>Descripción</label>
         <textarea
-          // value={description}
           name='descripcion'
-          required
           defaultValue={exercise.description}
+          maxLength={280}
+          required
           onChange={(e) => setDescription(e.target.value)}
         />
         <button disabled={loading}>Enviar</button>
