@@ -27,7 +27,7 @@ main.ExerciseCreate > form > select {
 
 main.ExerciseCreate > form > textarea {
   width: 175px;
-  height: 100px;
+  height: 200px;
   margin-bottom: 1rem;
   padding: 0.6rem;
 }
@@ -92,6 +92,10 @@ main.ExerciseCreate > p.Error {
   main.ExerciseCreate > form > textarea {
     font-size: 1.6rem;
     width: 400px;
+  }
+
+  main.ExerciseCreate > form > textarea {
+    height: 400px;
   }
 
   main.ExerciseCreate > form > input:first-child {
