@@ -107,17 +107,17 @@ ul.ExerciseList
   transition: 0.2s;
 }
 
-/* ul.ExerciseList
+ul.ExerciseList
   > li
   > footer
   > div.LikesFav
   > div.NotAddedFavourite
   > button:hover {
   cursor: pointer;
-  background-color: var(--dark-blue-green-color);
+  /* background-color: var(--dark-blue-green-color);
   color: white;
-  transition: 0.2s;
-} */
+  transition: 0.2s; */
+}
 
 ul.ExerciseList > li > footer > div.Changing {
   display: flex;
