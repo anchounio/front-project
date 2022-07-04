@@ -38,7 +38,9 @@ const ExerciseSearch = () => {
 
       const body = await res.json();
 
-      if (body.status === 'error') {
+      if (!token) {
+        setError('Es necesario estar logado para poder ver los ejercicios');
+      } else if (body.status === 'error') {
         setExercises(null);
         setError(body.message);
         console.log(error);
