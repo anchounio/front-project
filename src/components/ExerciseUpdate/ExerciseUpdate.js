@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useToken } from '../../TokenContext';
+import Select from 'react-select';
 import './ExerciseUpdate.css';
 
 const ExerciseUpdate = () => {
   const [exercise, setExercise] = useState('');
   const [token] = useToken();
+  const [typologyOption, setTypologyOption] = useState('');
+  const [muscularGroupOption, setMuscularGroupOption] = useState('');
   const [name, setName] = useState('');
   const [typology, setTypology] = useState('');
   const [muscularGroup, setMuscularGroup] = useState('');
@@ -16,6 +19,16 @@ const ExerciseUpdate = () => {
   const [error, setError] = useState(null);
 
   const { id } = useParams();
+
+  useEffect(() => {
+    showExercise();
+    // showSelections();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // En este primer fetch, sacamos los datos antiguos del ejercicios
+  // a modificar. La idea es extraerlos para que se muestren como valores
+  // por defecto modificables en el formulario.
 
   const showExercise = async () => {
     setLoading(true);
@@ -43,6 +56,14 @@ const ExerciseUpdate = () => {
         console.log(error);
       } else {
         setExercise(body.data.exercise);
+        setTypologyOption({
+          value: body.data.exercise.typology,
+          label: body.data.exercise.typology,
+        });
+        setMuscularGroupOption({
+          value: body.data.exercise.muscularGroup,
+          label: body.data.exercise.muscularGroup,
+        });
       }
     } catch (err) {
       setError(err.message);
@@ -51,12 +72,29 @@ const ExerciseUpdate = () => {
     }
   };
 
-  // Mediante "useEffect" hacemos que la primera vez que se monta el componente se
-  // cargue de forma automática la lista de exercises.
-  useEffect(() => {
-    showExercise();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const typOptions = [
+    { value: 'aerobico', label: 'aerobico' },
+    { value: 'anaerobico', label: 'anaerobico' },
+    { value: 'flexibilidad', label: 'flexibilidad' },
+    { value: 'resistencia', label: 'resistencia' },
+  ];
+
+  const muscOptions = [
+    { value: 'brazos', label: 'brazos' },
+    { value: 'piernas', label: 'piernas' },
+    { value: 'espalda', label: 'espalda' },
+    { value: 'pecho', label: 'pecho' },
+  ];
+
+  const handleTypologySelect = (e) => {
+    setTypology(e.value);
+    setTypologyOption(e.value);
+  };
+
+  const handleMuscularGroupSelect = (e) => {
+    setMuscularGroup(e.value);
+    setMuscularGroupOption(e.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -111,11 +149,11 @@ const ExerciseUpdate = () => {
         <input
           type='file'
           name='image'
-          // defaultValue={exercise.photo}
           onChange={(e) => {
             setSelectedFile(e.target.files[0]);
           }}
         />
+
         <label htmlFor='name'>Nombre</label>
         <input
           type='text'
@@ -127,136 +165,25 @@ const ExerciseUpdate = () => {
             setName(e.target.value);
           }}
         />
+
         <label htmlFor='typology'>Tipología</label>
-        {exercise.typology === 'aerobico' && (
-          <select
-            name='typology'
-            defaultValue={exercise.typology}
-            required
-            onChange={(e) => setTypology(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='aerobico' defaultValue>
-              aerobico
-            </option>
-            <option value='anaerobico'>anaerobico</option>
-            <option value='flexibilidad'>flexibilidad</option>
-            <option value='resistencia'>resistencia</option>
-          </select>
-        )}
-        {exercise.typology === 'anaerobico' && (
-          <select
-            name='typology'
-            defaultValue={exercise.typology}
-            required
-            onChange={(e) => setTypology(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='aerobico'>aerobico</option>
-            <option value='anaerobico' defaultValue>
-              anaerobico
-            </option>
-            <option value='flexibilidad'>flexibilidad</option>
-            <option value='resistencia'>resistencia</option>
-          </select>
-        )}
-        {exercise.typology === 'flexibilidad' && (
-          <select
-            name='typology'
-            defaultValue={exercise.typology}
-            required
-            onChange={(e) => setTypology(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='aerobico'>aerobico</option>
-            <option value='anaerobico'>anaerobico</option>
-            <option value='flexibilidad' defaultValue>
-              flexibilidad
-            </option>
-            <option value='resistencia'>resistencia</option>
-          </select>
-        )}
-        {exercise.typology === 'resistencia' && (
-          <select
-            name='typology'
-            defaultValue={exercise.typology}
-            required
-            onChange={(e) => setTypology(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='aerobico'>aerobico</option>
-            <option value='anaerobico'>anaerobico</option>
-            <option value='flexibilidad'>flexibilidad</option>
-            <option value='resistencia' defaultValue>
-              resistencia
-            </option>
-          </select>
-        )}
+
+        <Select
+          className='selector'
+          placeholder={typologyOption.value}
+          options={typOptions}
+          onChange={handleTypologySelect}
+        ></Select>
+
         <label htmlFor='muscularGroup'>Grupo muscular</label>
-        {exercise.muscularGroup === 'brazos' && (
-          <select
-            name='muscularGroup'
-            defaultValue={exercise.muscularGroup}
-            required
-            onChange={(e) => setMuscularGroup(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='brazos' defaultValue>
-              Brazos
-            </option>
-            <option value='piernas'>Piernas</option>
-            <option value='espalda'>Espalda</option>
-            <option value='pecho'>Pecho</option>
-          </select>
-        )}
-        {exercise.muscularGroup === 'piernas' && (
-          <select
-            name='muscularGroup'
-            defaultValue={exercise.muscularGroup}
-            required
-            onChange={(e) => setMuscularGroup(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='brazos'>Brazos</option>
-            <option value='piernas' defaultValue>
-              Piernas
-            </option>
-            <option value='espalda'>Espalda</option>
-            <option value='pecho'>Pecho</option>
-          </select>
-        )}
-        {exercise.muscularGroup === 'espalda' && (
-          <select
-            name='muscularGroup'
-            defaultValue={exercise.muscularGroup}
-            required
-            onChange={(e) => setMuscularGroup(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='brazos'>Brazos</option>
-            <option value='piernas'>Piernas</option>
-            <option value='espalda' defaultValue>
-              Espalda
-            </option>
-            <option value='pecho'>Pecho</option>
-          </select>
-        )}
-        {exercise.muscularGroup === 'pecho' && (
-          <select
-            name='muscularGroup'
-            defaultValue={exercise.muscularGroup}
-            required
-            onChange={(e) => setMuscularGroup(e.target.value)}
-          >
-            <option value=''></option>
-            <option value='brazos'>Brazos</option>
-            <option value='piernas'>Piernas</option>
-            <option value='espalda'>Espalda</option>
-            <option value='pecho' defaultValue>
-              Pecho
-            </option>
-          </select>
-        )}
+
+        <Select
+          className='selector'
+          placeholder={muscularGroupOption.value}
+          options={muscOptions}
+          onChange={handleMuscularGroupSelect}
+        ></Select>
+
         <label htmlFor='descripcion'>Descripción</label>
         <textarea
           // value={description}
