@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# MasterCard Gym App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación para organizar internamente los entrenamientos en un gimnasio.
 
-## Available Scripts
+# Características
 
-In the project directory, you can run:
+Se trata de una API que permita publicar ejercicios para la gestión de los mismos en un gimnasio. Los usuarios serán los trabajadores del gimnasio.
 
-### `npm start`
+# Puesta en marcha del back
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para que funcione la app (frontend del proyecto), primero tendrá que crearse una base de datos en mysql con el nombre Entrenamiento. Para ello basta con ejecutar una query desde mysql (File => New Query Tab) y dentro de la query introducir el comando "CREATE DATABASE Entrenamiento". A continuación desde la terminal de la API en Visual Studio tendremos que construir las tablas de la base de datos. Para ello hay que ejecutar el comando "npm run initDB". Esto creará las tablas y también al usuario admin. Después cargaremos la base de datos con el comando "npm run dev"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Puesta en marcha del front
 
-### `npm test`
+Una vez inicializada la api, bastará con ejecutar desde el font el comando "npm start".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Funcionamiento
 
-### `npm run build`
+Solamente el usuario administrador puede crear, actualizar o borrar ejercicios. Para ello tendrá que logarse primero. Sus credenciales son:
+user: admin
+pass: 1234
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Cualquier usuario que acceda a la app puede registrarse y después logarse. Una vez que un usuario normal está logado, puede ver los ejercicios
+creados previamente por el admin, añadir ejercicios a favoritos, dar likes a los ejercicios y consultar su listado de ejercicios favoritos.
