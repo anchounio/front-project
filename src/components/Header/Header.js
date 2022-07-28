@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header>
-      {token && <p className='Bienvenido'>Sesión iniciada como {user}</p>}
+      {/* {token && <p className='Bienvenido'>Sesión iniciada como {user}</p>} */}
       <div className='Gym'>
         <NavLink to='/'>
           <h1 className='Cabecera'>MUSCLECARD GYM</h1>
@@ -31,6 +31,7 @@ const Header = () => {
         </NavLink>
       </div>
       <div className='Buttons'>
+        {token && <p className='Bienvenido'>@{user}</p>}
         {!token && (
           <div className='Button'>
             <NavLink to='/login'>Iniciar sesión</NavLink>
