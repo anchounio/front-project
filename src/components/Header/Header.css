@@ -9,6 +9,7 @@ div.App > header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
   margin: 0 0 1rem 0;
   gap: 1rem;
 }
@@ -39,6 +40,7 @@ h1.Cabecera {
 div.Buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -66,10 +68,6 @@ div.Buttons > div.Button:active {
   box-shadow: -3px -3px 0px rgba(0, 0, 0, 0.4);
 }
 
-div.Buttons > div.Button:first-child {
-  margin-right: 1rem;
-}
-
 div.Buttons > div.Button a {
   text-decoration: none;
   color: black;
@@ -93,10 +91,6 @@ div.Buttons > div.Button > p {
 }
 
 @media only screen and (min-width: 760px) {
-  .Bienvenido {
-    font-size: 1.5rem;
-  }
-
   .Gym {
     font-size: 1.5rem;
   }
@@ -116,24 +110,16 @@ div.Buttons > div.Button > p {
 }
 
 @media only screen and (min-width: 1024px) {
-  .Bienvenido {
-    font-size: 2rem;
+  div.App > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-
   .Gym {
     font-size: 2rem;
   }
 
   .Logo {
     min-width: 9.375rem;
-  }
-
-  .Buttons {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .Button {
-    min-width: 300px;
   }
 }

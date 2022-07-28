@@ -265,16 +265,8 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:hover {
     width: 650px;
   }
 
-  ul.ExerciseList > li > div.List > p {
-    font-size: 2rem;
-  }
-
   ul.ExerciseList > li > footer > div > p {
     font-size: 1.5rem;
-  }
-
-  ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
-    font-size: 1.4rem;
   }
 
   ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
@@ -282,24 +274,14 @@ ul.ExerciseList > li > footer > div.Changing > a.Update:hover {
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
     width: 170px;
-    font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  ul.ExerciseList > li > div.List > p {
-    font-size: 2.5rem;
-  }
-
-  ul.ExerciseList > li > footer > div.LikesFav > div.Likes > p {
-    font-size: 1.6rem;
-  }
-
   ul.ExerciseList > li > footer > div.LikesFav > div.AddedFavourite > button,
   ul.ExerciseList > li > footer > div.LikesFav > div.NotAddedFavourite > button,
   ul.ExerciseList > li > footer > div.Changing > button,
   ul.ExerciseList > li > footer > div.Changing > a.Update {
     width: 200px;
-    font-size: 1.9rem;
   }
 }

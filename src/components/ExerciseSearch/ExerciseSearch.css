@@ -136,10 +136,6 @@ img {
 }
 
 @media only screen and (min-width: 760px) {
-  main > h2 {
-    font-size: 2.3rem;
-  }
-
   main.ExerciseSearch > p.Error {
     font-size: 1.8rem;
   }
@@ -152,21 +148,9 @@ img {
     gap: 10rem;
   }
 
-  main.ExerciseSearch > form > div > div > label {
-    font-size: 1.8rem;
-  }
-
-  main.ExerciseSearch > form > div > div > select {
-    font-size: 1.8rem;
-  }
-
   main.ExerciseSearch > form > button {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 180px;
-  }
-
-  ul.ExerciseSearchList > li > div > p {
-    font-size: 1.8rem;
   }
 
   ul.ExerciseSearchList {
@@ -182,6 +166,6 @@ img {
   }
 
   ul.ExerciseSearchList > li > div > footer > a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
