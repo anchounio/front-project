@@ -20,13 +20,13 @@ main.ExerciseUpdate > form > label {
 }
 
 main.ExerciseUpdate > form > .selector {
-  width: 175px;
+  width: 300px;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 main.ExerciseUpdate > form > textarea {
-  width: 175px;
+  width: 300px;
   height: 200px;
   margin-bottom: 1rem;
   padding: 0.6rem;
@@ -34,7 +34,7 @@ main.ExerciseUpdate > form > textarea {
 
 main.ExerciseUpdate > form > input {
   margin-bottom: 1rem;
-  width: 175px;
+  width: 300px;
   padding: 0 0.2rem;
 }
 
@@ -99,13 +99,13 @@ main.ExerciseUpdate > p.Error {
   }
 
   main.ExerciseUpdate > form > label {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   main.ExerciseUpdate > form > input,
   main.ExerciseUpdate > form > .selector,
   main.ExerciseUpdate > form > textarea {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 400px;
   }
 

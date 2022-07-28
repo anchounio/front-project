@@ -20,13 +20,13 @@ main.ExerciseCreate > form > label {
 }
 
 main.ExerciseCreate > form > select {
-  width: 175px;
+  width: 300px;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 main.ExerciseCreate > form > textarea {
-  width: 175px;
+  width: 300px;
   height: 200px;
   margin-bottom: 1rem;
   padding: 0.6rem;
@@ -34,7 +34,7 @@ main.ExerciseCreate > form > textarea {
 
 main.ExerciseCreate > form > input {
   margin-bottom: 1rem;
-  width: 175px;
+  width: 300px;
   padding: 0 0.2rem;
 }
 
@@ -84,13 +84,13 @@ main.ExerciseCreate > p.Error {
   }
 
   main.ExerciseCreate > form > label {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   main.ExerciseCreate > form > input,
   main.ExerciseCreate > form > select,
   main.ExerciseCreate > form > textarea {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 400px;
   }
 
